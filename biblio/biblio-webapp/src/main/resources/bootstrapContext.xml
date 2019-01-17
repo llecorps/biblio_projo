@@ -12,11 +12,11 @@
     <context:annotation-config/>
 
     <!-- Scanne les packages pour trouver les beans qui se déclarent (@Named...) -->
-    <context:component-scan base-package="org.example.demo.ticket"/>
+    <context:component-scan base-package="org.lle.biblio"/>
 
     <!-- Inclusion d'autres fichiers de contexte Spring -->
-    <import resource="classpath:/org/example/demo/ticket/webapp/webappContext.xml" />
-    <import resource="classpath:/org/example/demo/ticket/business/businessContext.xml" />
-    <import resource="classpath:/org/example/demo/ticket/consumer/consumerContext.xml" />
+    <import resource="classpath:/org/lle/biblio/webapp/webappContext.xml" />
+    <import resource="classpath:/org/lle/biblio/business/businessContext.xml" />
+    <import resource="classpath:/org/lle/biblio/consumer/consumerContext.xml" />
 
 </beans>
