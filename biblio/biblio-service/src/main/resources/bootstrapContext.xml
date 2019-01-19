@@ -15,29 +15,7 @@
     <context:component-scan base-package="org.lle.biblio"/>
 
     <!-- Inclusion d'autres fichiers de contexte Spring -->
-
+    <import resource="classpath:/org.lle.biblio.service/serviceContext.xml"/>
     <import resource="classpath:/org/lle/biblio/business/businessContext.xml"/>
     <import resource="classpath:/org/lle/biblio/consumer/consumerContext.xml"/>
-
-
-    <bean id="dbProperty"
-          class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-        <property name="location">
-            <value>classpath:db-biblio.properties</value>
-        </property>
-        <property name="ignoreResourceNotFound" value="false" />
-        <property name="ignoreUnresolvablePlaceholders" value="false" />
-    </bean>
-
-    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${driverClassName}" />
-        <property name="url" value="${url}" />
-        <property name="username" value="${user}" />
-        <property name="password" value="${password}" />
-    </bean>
-
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="ds"></property>
-    </bean>
-
 </beans>
