@@ -58,6 +58,7 @@
         <module>biblio-consumer</module>
         <module>biblio-model</module>
         <module>biblio-technical</module>
+        <module>biblio-service</module>
     </modules>
 
 
@@ -95,6 +96,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>biblio-technical</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>biblio-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
