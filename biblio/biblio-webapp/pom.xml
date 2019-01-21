@@ -19,14 +19,14 @@
     <packaging>war</packaging>
 
     <!-- ===== Informations générales ===== -->
-    <name>${projectName} - Application web</name>
+    <name>${projectName}-webapp</name>
 
 
     <!-- =============================================================== -->
     <!-- Propriétés -->
     <!-- =============================================================== -->
     <properties>
-        <application.name>biblioTac</application.name>
+        <application.name>Biblio</application.name>
         <maven.build.timestamp.format>dd/MM/yyyy</maven.build.timestamp.format>
         <build.timestamp>${maven.build.timestamp}</build.timestamp>
     </properties>
@@ -58,6 +58,28 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <!-- Framework Apache Struts -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-json-plugin</artifactId>
+            <version>2.5.10</version>
+        </dependency>
+
+        <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
         </dependency>
@@ -72,11 +94,6 @@
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
         </dependency>
 
         <!-- Drivers JDBC PostgreSQL -->

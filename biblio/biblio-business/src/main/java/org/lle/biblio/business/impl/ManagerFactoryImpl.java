@@ -1,11 +1,12 @@
 package org.lle.biblio.business.impl;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import org.lle.biblio.business.contract.ManagerFactory;
 import org.lle.biblio.business.contract.manager.ProjetManager;
 import org.lle.biblio.business.contract.manager.TicketManager;
+import org.lle.biblio.business.contract.manager.UtilisateurManager;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 
 @Named("managerFactory")
@@ -31,5 +32,13 @@ public class ManagerFactoryImpl implements ManagerFactory {
         ticketManager = pTicketManager;
     }
 
-    //...
+    @Inject
+    private UtilisateurManager utilisateurManager;
+    @Override
+    public UtilisateurManager getUtilisateurManager() {
+        return this.utilisateurManager;
+    }
+    public void setUtilisateurManager(UtilisateurManager pUtilisateurManager) {
+        utilisateurManager = pUtilisateurManager;
+    }
 }

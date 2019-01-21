@@ -1,10 +1,12 @@
 package org.lle.biblio.service;
 
+import org.lle.biblio.model.bean.utilisateur.Utilisateur;
+
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 @WebService(serviceName = "DoLogin")
-public class LoginService {
+public class LoginService extends AbstractService {
 
 
 
@@ -42,11 +44,17 @@ public class LoginService {
 
         String vChaine = "login:"+login+" password:"+password+" ne sont pas correctes!";
 
-        if ((login.equals(utilisateur)) && (password.equals(motdepasse))){
+        Utilisateur vUtilisateur = getManagerFactory().getUtilisateurManager().getUtilisateur(login,password);
+
+
+        if ((login.equals(vUtilisateur.getLogin())) && (password.equals(vUtilisateur.getPassword()))){
 
             vChaine = "login:"+login+" password:"+password+" sont correctes!";
 
         }
+
+
+
 
         return vChaine;
 
