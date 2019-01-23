@@ -15,8 +15,8 @@
     <context:component-scan base-package="org.lle.biblio"/>
 
     <!-- Inclusion d'autres fichiers de contexte Spring -->
-    <import resource="classpath:/org/lle/biblio/webapp/webappContext.xml" />
-    <import resource="classpath:/org/lle/biblio/business/businessContext.xml" />
-    <import resource="classpath:/org/lle/biblio/consumer/consumerContext.xml" />
+    <import resource="classpath:/org/lle/biblio/service/webapp/webappContext.xml" />
+    <import resource="classpath:/org/lle/biblio/service/business/businessContext.xml" />
+    <import resource="classpath:/org/lle/biblio/service/consumer/consumerContext.xml" />
 
 </beans>

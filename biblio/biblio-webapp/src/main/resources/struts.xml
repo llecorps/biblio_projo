@@ -6,7 +6,7 @@
     <!-- ===== Package de configuration de base ===== -->
     <package name="base" abstract="true" extends="struts-default">
         <interceptors>
-            <interceptor name="auth" class="org.lle.biblio.webapp.interceptor.AuthInterceptor" />
+            <interceptor name="auth" class="org.lle.biblio.service.webapp.interceptor.AuthInterceptor" />
 
             <interceptor-stack name="applicationDefaultStack">
                 <interceptor-ref name="store">
@@ -45,7 +45,7 @@
 
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="Exception" />
-            <exception-mapping exception="org.lle.biblio.model.exception.TechnicalException"
+            <exception-mapping exception="org.lle.biblio.service.model.exception.TechnicalException"
                                result="TechnicalException" />
         </global-exception-mappings>
     </package>
@@ -63,7 +63,7 @@
         </action>
 
         <!-- Actions Login/Logout -->
-        <action name="login" class="org.lle.biblio.webapp.action.LoginAction" method="doLogin">
+        <action name="login" class="org.lle.biblio.service.webapp.action.LoginAction" method="doLogin">
             <result name="input">/jsp/login.jsp</result>
             <result name="success" type="redirectAction">espace</result>
         </action>

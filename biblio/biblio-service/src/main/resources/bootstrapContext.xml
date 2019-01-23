@@ -16,6 +16,6 @@
 
     <!-- Inclusion d'autres fichiers de contexte Spring -->
     <import resource="classpath:/org.lle.biblio.service/serviceContext.xml"/>
-    <import resource="classpath:/org/lle/biblio/business/businessContext.xml"/>
-    <import resource="classpath:/org/lle/biblio/consumer/consumerContext.xml"/>
+    <import resource="classpath:/org/lle/biblio/service/business/businessContext.xml"/>
+    <import resource="classpath:/org/lle/biblio/service/consumer/consumerContext.xml"/>
 </beans>
