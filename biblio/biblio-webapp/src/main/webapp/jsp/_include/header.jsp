@@ -15,7 +15,7 @@
 
 
             <li class="nav-item active">
-                <s:a action="channel_list" class="nav-link"><s:text name="nav.channel" /></s:a> <span class="sr-only">(current)</span></a>
+                <s:a action="recherche" class="nav-link"><s:text name="nav.recherche" /></s:a> <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">

@@ -20,7 +20,8 @@
 
     <s:form action="login" class="form-group">
 
-        <s:textfield name="Login" label="Identifiant" requiredLabel="true" />
+        <s:textfield name="login" label="Identifiant" requiredLabel="true" />
+        <s:password name="password" label="Mot de passe" requiredLabel="true" id="passFieldId" />
 
         <s:submit value="Connexion"/>
     </s:form>

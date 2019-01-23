@@ -65,7 +65,7 @@
         <!-- Actions Login/Logout -->
         <action name="login" class="org.lle.biblio.webapp.action.LoginAction" method="doLogin">
             <result name="input">/jsp/login.jsp</result>
-            <result name="success" type="redirectAction">selectChannel</result>
+            <result name="success" type="redirectAction">espace</result>
         </action>
         <action name="logout" class="org.lel.biblio.webapp.action.LoginAction" method="doLogout">
             <result type="redirectAction">login</result>
