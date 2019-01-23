@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3609649601">
+    <data-source source="LOCAL" name="PostgreSQL - biblio@db-biblio.chgtbj384vos.us-east-1.rds.amazonaws.com" uuid="884b7010-1b54-4f50-959a-6388ad0fee82">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db-biblio.chgtbj384vos.us-east-1.rds.amazonaws.com:5432/biblio</jdbc-url>
+    </data-source>
+  </component>
+</project>

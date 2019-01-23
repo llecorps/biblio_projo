@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="biblio-batch" />
+        <module name="biblio-business" />
+        <module name="biblio-consumer" />
+        <module name="biblio-model" />
+        <module name="biblio-service" />
+        <module name="biblio-technical" />
+        <module name="biblio-webapp" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="biblio" target="1.8" />
+      <module name="biblio-batch" target="1.8" />
+      <module name="biblio-business" target="1.8" />
+      <module name="biblio-consumer" target="1.8" />
+      <module name="biblio-model" target="1.8" />
+      <module name="biblio-service" target="1.8" />
+      <module name="biblio-technical" target="1.8" />
+      <module name="biblio-webapp" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

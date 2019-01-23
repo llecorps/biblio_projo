@@ -16,5 +16,7 @@ public interface UtilisateurDao {
      * @return l'{@link Utilisateur} demandé
      * @throws NotFoundException Si l'{@link Utilisateur} n'a pas été trouvé
      */
-    Utilisateur getUtilisateur(Integer pId) throws NotFoundException;
+    Utilisateur getUtilisateur(String login, String password ) throws NotFoundException;
+
+    Utilisateur getUtilisateur(Integer pId ) throws NotFoundException;
 }

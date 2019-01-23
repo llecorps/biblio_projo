@@ -1,5 +1,8 @@
 package org.lle.biblio.business.impl.manager;
 
+import org.lle.biblio.consumer.contract.DaoFactory;
+import org.springframework.transaction.PlatformTransactionManager;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.validation.Configuration;
@@ -7,15 +10,11 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-import org.springframework.transaction.PlatformTransactionManager;
-
-import org.lle.biblio.consumer.contract.DaoFactory;
-
 
 public abstract class AbstractManager {
 
     @Inject
-    @Named("txManagerTicket")
+    @Named("txManagerBiblio")
     private PlatformTransactionManager platformTransactionManager;
     public PlatformTransactionManager getPlatformTransactionManager() {
         return platformTransactionManager;
