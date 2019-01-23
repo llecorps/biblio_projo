@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/biblio.iml" filepath="$PROJECT_DIR$/biblio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-batch/biblio-batch.iml" filepath="$PROJECT_DIR$/biblio-batch/biblio-batch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-business/biblio-business.iml" filepath="$PROJECT_DIR$/biblio-business/biblio-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-consumer/biblio-consumer.iml" filepath="$PROJECT_DIR$/biblio-consumer/biblio-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-model/biblio-model.iml" filepath="$PROJECT_DIR$/biblio-model/biblio-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-service/biblio-service.iml" filepath="$PROJECT_DIR$/biblio-service/biblio-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-technical/biblio-technical.iml" filepath="$PROJECT_DIR$/biblio-technical/biblio-technical.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biblio-webapp/biblio-webapp.iml" filepath="$PROJECT_DIR$/biblio-webapp/biblio-webapp.iml" />
+    </modules>
+  </component>
+</project>
