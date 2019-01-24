@@ -21,4 +21,6 @@
         <constructor-arg ref="dataSourceBiblioConfiguration" />
     </bean>
 
+    <bean id="LoginServiceImpl" class="org.lle.biblio.service.LoginServiceImpl" />
+
 </beans>

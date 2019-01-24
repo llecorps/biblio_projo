@@ -1,19 +1,17 @@
 package org.lle.biblio.service;
 
 import org.lle.biblio.model.bean.utilisateur.Utilisateur;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+/**
+ * Created by TheAdmin on 24.01.2019.
+ */
 @WebService(serviceName = "DoLogin")
-public class LoginService extends AbstractService {
-
-
-
-
-
-    private static String utilisateur = "mike";
-    private static String motdepasse = "root";
+public class LoginService {
 
     // ==================== Attributs ====================
     // ----- Paramètres en entrée
@@ -40,23 +38,35 @@ public class LoginService extends AbstractService {
     }
 
     @WebMethod
-    public String doLogin(String login, String password){
+    public String DoLogin(String login, String password){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LoginServiceImpl vLoginService = vApplicationContext.getBean("LoginServiceImpl", LoginServiceImpl.class);
 
         String vChaine = "login:"+login+" password:"+password+" ne sont pas correctes!";
 
-        Utilisateur vUtilisateur = getManagerFactory().getUtilisateurManager().getUtilisateur(login,password);
+       Utilisateur vUtilisateur = vLoginService.doLogin(login, password);
 
 
         if ((login.equals(vUtilisateur.getLogin())) && (password.equals(vUtilisateur.getPassword()))){
 
-            vChaine = "login:"+login+" password:"+password+" sont correctes!";
+            vChaine = "login:"+vUtilisateur.getLogin()+" password:"+vUtilisateur.getPassword()+" sont correctes!";
 
         }
 
 
 
 
+
         return vChaine;
 
+
     }
+
+
+
+
+
 }
