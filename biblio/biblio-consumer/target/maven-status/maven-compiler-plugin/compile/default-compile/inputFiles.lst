@@ -1,0 +1,12 @@
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\dao\ProjetDaoImpl.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\dao\TicketDaoImpl.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\dao\UtilisateurDaoImpl.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\contract\dao\UtilisateurDao.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\DaoFactoryImpl.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\contract\DaoFactory.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\rowmapper\utilisateur\UtilisateurRM.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\contract\dao\ProjetDao.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\dao\AbstractDaoImpl.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\rowmapper\projet\ProjetRM.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\impl\rowmapper\ticket\TicketStatutRM.java
+C:\apps\dev\biblio_projo\biblio\biblio-consumer\src\main\java\org\lle\biblio\consumer\contract\dao\TicketDao.java
