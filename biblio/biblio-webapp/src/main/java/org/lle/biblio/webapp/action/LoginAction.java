@@ -6,11 +6,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.lle.biblio.business.contract.ManagerFactory;
-import org.lle.biblio.model.bean.utilisateur.Utilisateur;
+import org.lle.biblio.webapp.generated.BiblioService;
+import org.lle.biblio.webapp.generated.BiblioService_Service;
+import org.lle.biblio.webapp.generated.Utilisateur;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
+
+
 
 public class LoginAction extends ActionSupport implements ServletRequestAware, SessionAware {
 
@@ -81,14 +85,18 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
             if (!StringUtils.isAllEmpty(login, password)) {
 
-                Utilisateur vUtilisateur
-                        = managerFactory.getUtilisateurManager()
-                        .getUtilisateur(login, password);
+
+                BiblioService_Service pBiblio = new BiblioService_Service();
+
+                BiblioService pBiblioService = pBiblio.getBiblioServicePort();
+
+                utilisateur = pBiblioService.doLogin(login, password);
+
 
                 //if (vUtilisateur.getUsername().equals(login) &&  vUtilisateur.getPassword().equals(password)) {
-                if (vUtilisateur.getLogin().equals(login) &&  vUtilisateur.getPassword().equals(password)) {
+                if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
                         // Ajout de l'utilisateur en session
-                        this.session.put("utilisateur", vUtilisateur);
+                        this.session.put("utilisateur", utilisateur);
 
 
                         vResult = ActionSupport.SUCCESS;

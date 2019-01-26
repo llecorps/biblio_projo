@@ -16,8 +16,17 @@
 
     <h2><s:text name="title.login" /></h2>
 
+    <s:if test="#session.utilisateur">
+
+        <li>Login : <s:property value="utilisateur.login" /></li>
+        <li>Email : <s:property value="utilisateur.email" /></li>
+        <li>Adress : <s:property value="utilisateur.adress" /></li>
+        <li>Phone : <s:property value="utilisteur.phone" /></li>
 
 
+    </s:if>
+
+    <s:else>
     <s:form action="login" class="form-group">
 
         <s:textfield name="login" label="Identifiant" requiredLabel="true" />
@@ -26,6 +35,7 @@
         <s:submit value="Connexion"/>
     </s:form>
 
+    </s:else>
 </div>
 
     <%@ include file="./_include/scripts.jsp" %>

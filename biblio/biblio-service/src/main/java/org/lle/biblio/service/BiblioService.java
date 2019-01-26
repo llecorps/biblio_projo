@@ -10,8 +10,8 @@ import javax.jws.WebService;
 /**
  * Created by TheAdmin on 24.01.2019.
  */
-@WebService(serviceName = "DoLogin")
-public class LoginService {
+@WebService(serviceName = "BiblioService")
+public class BiblioService {
 
     // ==================== Attributs ====================
     // ----- Paramètres en entrée
@@ -38,7 +38,7 @@ public class LoginService {
     }
 
     @WebMethod
-    public String DoLogin(String login, String password){
+    public Utilisateur DoLogin(String login, String password){
 
         ApplicationContext vApplicationContext
                 = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
@@ -55,14 +55,7 @@ public class LoginService {
             vChaine = "login:"+vUtilisateur.getLogin()+" password:"+vUtilisateur.getPassword()+" sont correctes!";
 
         }
-
-
-
-
-
-        return vChaine;
-
-
+        return vUtilisateur;
     }
 
 

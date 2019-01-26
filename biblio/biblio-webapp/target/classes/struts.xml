@@ -65,7 +65,7 @@
         <!-- Actions Login/Logout -->
         <action name="login" class="org.lle.biblio.webapp.action.LoginAction" method="doLogin">
             <result name="input">/jsp/login.jsp</result>
-            <result name="success" type="redirectAction">espace</result>
+            <result name="success">/jsp/login.jsp</result>
         </action>
         <action name="logout" class="org.lel.biblio.webapp.action.LoginAction" method="doLogout">
             <result type="redirectAction">login</result>
@@ -77,6 +77,13 @@
     <package name="private" extends="base">
         <default-interceptor-ref name="authenticatedStack" />
 
+        <action name="Espace" class="org.lle.biblio.webapp.action.EspaceAction" method="doSpaceUser">
+            <result name="input">/jsp/utilisateur/account.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">channel</param>
+                <param name="channel">${channel.name}</param>
+            </result>
+        </action>
 
 
 
