@@ -1,5 +1,6 @@
 package org.lle.biblio.service;
 
+import org.lle.biblio.model.bean.location.Location;
 import org.lle.biblio.model.bean.utilisateur.Utilisateur;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -44,21 +45,21 @@ public class BiblioService {
                 = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LoginServiceImpl vLoginService = vApplicationContext.getBean("LoginServiceImpl", LoginServiceImpl.class);
-
-        String vChaine = "login:"+login+" password:"+password+" ne sont pas correctes!";
-
        Utilisateur vUtilisateur = vLoginService.doLogin(login, password);
-
-
-        if ((login.equals(vUtilisateur.getLogin())) && (password.equals(vUtilisateur.getPassword()))){
-
-            vChaine = "login:"+vUtilisateur.getLogin()+" password:"+vUtilisateur.getPassword()+" sont correctes!";
-
-        }
         return vUtilisateur;
     }
 
+    @WebMethod
+    public Location getLocation(int id){
 
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        Location vLocation = vLocationService.getLocation(id);
+        return vLocation;
+
+    }
 
 
 

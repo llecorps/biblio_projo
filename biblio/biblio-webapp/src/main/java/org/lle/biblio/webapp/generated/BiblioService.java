@@ -27,26 +27,29 @@ public interface BiblioService {
     /**
      * 
      * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "setPassword", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetPassword")
-    @ResponseWrapper(localName = "setPasswordResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetPasswordResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/setPasswordRequest", output = "http://service.biblio.lle.org/BiblioService/setPasswordResponse")
-    public void setPassword(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
      * @return
-     *     returns java.lang.String
+     *     returns org.lle.biblio.webapp.generated.Location
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getPassword", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetPassword")
-    @ResponseWrapper(localName = "getPasswordResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetPasswordResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/getPasswordRequest", output = "http://service.biblio.lle.org/BiblioService/getPasswordResponse")
-    public String getPassword();
+    @RequestWrapper(localName = "getLocation", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLocation")
+    @ResponseWrapper(localName = "getLocationResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLocationResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/getLocationRequest", output = "http://service.biblio.lle.org/BiblioService/getLocationResponse")
+    public Location getLocation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "setLogin", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetLogin")
+    @ResponseWrapper(localName = "setLoginResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetLoginResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/setLoginRequest", output = "http://service.biblio.lle.org/BiblioService/setLoginResponse")
+    public void setLogin(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
     /**
      * 
@@ -80,13 +83,25 @@ public interface BiblioService {
 
     /**
      * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getPassword", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetPassword")
+    @ResponseWrapper(localName = "getPasswordResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetPasswordResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/getPasswordRequest", output = "http://service.biblio.lle.org/BiblioService/getPasswordResponse")
+    public String getPassword();
+
+    /**
+     * 
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "setLogin", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetLogin")
-    @ResponseWrapper(localName = "setLoginResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetLoginResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/setLoginRequest", output = "http://service.biblio.lle.org/BiblioService/setLoginResponse")
-    public void setLogin(
+    @RequestWrapper(localName = "setPassword", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetPassword")
+    @ResponseWrapper(localName = "setPasswordResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetPasswordResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/setPasswordRequest", output = "http://service.biblio.lle.org/BiblioService/setPasswordResponse")
+    public void setPassword(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 

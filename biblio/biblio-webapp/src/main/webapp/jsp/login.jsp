@@ -21,7 +21,8 @@
         <li>Login : <s:property value="utilisateur.login" /></li>
         <li>Email : <s:property value="utilisateur.email" /></li>
         <li>Adress : <s:property value="utilisateur.adress" /></li>
-        <li>Phone : <s:property value="utilisteur.phone" /></li>
+        <li>Phone : <s:property value="utilisateur.phone" /></li>
+        <li>Location : <s:property value="location.livre_id" /> Date: <s:property value="location.expiredate" /> </li>
 
 
     </s:if>

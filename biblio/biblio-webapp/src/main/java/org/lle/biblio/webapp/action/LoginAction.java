@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.lle.biblio.business.contract.ManagerFactory;
+import org.lle.biblio.webapp.generated.Location;
 import org.lle.biblio.webapp.generated.BiblioService;
 import org.lle.biblio.webapp.generated.BiblioService_Service;
 import org.lle.biblio.webapp.generated.Utilisateur;
@@ -25,6 +26,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     private Map<String, Object> session;
     private Utilisateur utilisateur;
     private String pseudo;
+    private Location location;
 
     public String getPseudo() {
         return pseudo;
@@ -40,6 +42,14 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override
@@ -92,12 +102,16 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
                 utilisateur = pBiblioService.doLogin(login, password);
 
+                //location =  pBiblioService.ge
+
 
                 //if (vUtilisateur.getUsername().equals(login) &&  vUtilisateur.getPassword().equals(password)) {
                 if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
                         // Ajout de l'utilisateur en session
                         this.session.put("utilisateur", utilisateur);
 
+
+                    location =  pBiblioService.getLocation(utilisateur.getId());
 
                         vResult = ActionSupport.SUCCESS;
                     } else {
@@ -120,15 +134,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
          */
         public String doLogout() {
 
-            Object vUser = this.session.get("utilisateur");
-
-            if (vUser instanceof Utilisateur) {
-               // managerFactory.getUtilisateurManager().deleteUtilisateur((Utilisateur) vUser);
-            }
-
+            // Invalidation de la session
             this.servletRequest.getSession().invalidate();
-
-
             return ActionSupport.SUCCESS;
         }
 

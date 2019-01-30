@@ -29,8 +29,10 @@ public class ObjectFactory {
     private final static QName _GetPasswordResponse_QNAME = new QName("http://service.biblio.lle.org/", "getPasswordResponse");
     private final static QName _SetLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "setLoginResponse");
     private final static QName _GetLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLoginResponse");
+    private final static QName _GetLocation_QNAME = new QName("http://service.biblio.lle.org/", "getLocation");
     private final static QName _GetPassword_QNAME = new QName("http://service.biblio.lle.org/", "getPassword");
     private final static QName _SetPassword_QNAME = new QName("http://service.biblio.lle.org/", "setPassword");
+    private final static QName _GetLocationResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLocationResponse");
     private final static QName _GetLogin_QNAME = new QName("http://service.biblio.lle.org/", "getLogin");
     private final static QName _SetLogin_QNAME = new QName("http://service.biblio.lle.org/", "setLogin");
     private final static QName _DoLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "DoLoginResponse");
@@ -40,6 +42,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetLocationResponse }
+     * 
+     */
+    public GetLocationResponse createGetLocationResponse() {
+        return new GetLocationResponse();
     }
 
     /**
@@ -56,6 +66,14 @@ public class ObjectFactory {
      */
     public SetPassword createSetPassword() {
         return new SetPassword();
+    }
+
+    /**
+     * Create an instance of {@link GetLocation }
+     * 
+     */
+    public GetLocation createGetLocation() {
+        return new GetLocation();
     }
 
     /**
@@ -131,6 +149,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Location }
+     * 
+     */
+    public Location createLocation() {
+        return new Location();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SetPasswordResponse }{@code >}}
      * 
      */
@@ -176,6 +202,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLocation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getLocation")
+    public JAXBElement<GetLocation> createGetLocation(GetLocation value) {
+        return new JAXBElement<GetLocation>(_GetLocation_QNAME, GetLocation.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetPassword }{@code >}}
      * 
      */
@@ -191,6 +226,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setPassword")
     public JAXBElement<SetPassword> createSetPassword(SetPassword value) {
         return new JAXBElement<SetPassword>(_SetPassword_QNAME, SetPassword.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLocationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getLocationResponse")
+    public JAXBElement<GetLocationResponse> createGetLocationResponse(GetLocationResponse value) {
+        return new JAXBElement<GetLocationResponse>(_GetLocationResponse_QNAME, GetLocationResponse.class, null, value);
     }
 
     /**

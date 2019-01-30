@@ -1,29 +1,22 @@
 package org.lle.biblio.consumer.impl;
 
+import org.lle.biblio.consumer.contract.DaoFactory;
+import org.lle.biblio.consumer.contract.dao.LocationDao;
+import org.lle.biblio.consumer.contract.dao.UtilisateurDao;
+
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.lle.biblio.consumer.contract.DaoFactory;
-import org.lle.biblio.consumer.contract.dao.ProjetDao;
-import org.lle.biblio.consumer.contract.dao.TicketDao;
-import org.lle.biblio.consumer.contract.dao.UtilisateurDao;
 
 
 @Named
 public class DaoFactoryImpl implements DaoFactory {
 
-    @Inject
-    private ProjetDao projetDao;
-    @Override
-    public ProjetDao getProjetDao() {
-        return projetDao;
-    }
 
     @Inject
-    private TicketDao ticketDao;
+    private LocationDao locationDao;
     @Override
-    public TicketDao getTicketDao() {
-        return ticketDao;
+    public LocationDao getLocationDao() {
+        return locationDao;
     }
 
     @Inject

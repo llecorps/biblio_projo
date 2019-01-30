@@ -67,7 +67,7 @@
             <result name="input">/jsp/login.jsp</result>
             <result name="success">/jsp/login.jsp</result>
         </action>
-        <action name="logout" class="org.lel.biblio.webapp.action.LoginAction" method="doLogout">
+        <action name="logout" class="org.lle.biblio.webapp.action.LoginAction" method="doLogout">
             <result type="redirectAction">login</result>
         </action>
     </package>

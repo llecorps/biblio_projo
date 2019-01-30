@@ -39,7 +39,6 @@ import javax.xml.bind.annotation.XmlType;
     "password",
     "phone"
 })
-//public class Utilisateur extends org.lle.biblio.model.bean.utilisateur.Utilisateur {
 public class Utilisateur {
 
     protected String adress;
