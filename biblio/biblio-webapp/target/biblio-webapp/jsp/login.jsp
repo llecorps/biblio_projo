@@ -13,6 +13,7 @@
 
 
 <div class="container" >
+<div class="container" >
 
     <h2><s:text name="title.login" /></h2>
 
@@ -22,8 +23,9 @@
         <li>Email : <s:property value="utilisateur.email" /></li>
         <li>Adress : <s:property value="utilisateur.adress" /></li>
         <li>Phone : <s:property value="utilisateur.phone" /></li>
-        <li>Location : <s:property value="location.livre_id" /> Date: <s:property value="location.expiredate" /> </li>
-
+        <li>Location : <s:property value="location.livreId" /> Date: <s:property value="location.expiredate" /> </li>
+        <li>Livre : <s:property value="livre.titre" /> Description: <s:property value="livre.description" /> </li>
+        <li>Auteur : <s:property value="auteur.prenom" /> <s:property value="auteur.nom" /> </li>
 
     </s:if>
 

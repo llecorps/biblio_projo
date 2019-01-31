@@ -6,10 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.lle.biblio.business.contract.ManagerFactory;
-import org.lle.biblio.webapp.generated.Location;
-import org.lle.biblio.webapp.generated.BiblioService;
-import org.lle.biblio.webapp.generated.BiblioService_Service;
-import org.lle.biblio.webapp.generated.Utilisateur;
+import org.lle.biblio.webapp.generated.*;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +24,24 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     private Utilisateur utilisateur;
     private String pseudo;
     private Location location;
+    private Livre livre;
+    private Auteur auteur;
+
+    public Auteur getAuteur() {
+        return auteur;
+    }
+
+    public void setAuteur(Auteur auteur) {
+        this.auteur = auteur;
+    }
+
+    public Livre getLivre() {
+        return livre;
+    }
+
+    public void setLivre(Livre livre) {
+        this.livre = livre;
+    }
 
     public String getPseudo() {
         return pseudo;
@@ -102,16 +117,18 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
                 utilisateur = pBiblioService.doLogin(login, password);
 
-                //location =  pBiblioService.ge
 
-
-                //if (vUtilisateur.getUsername().equals(login) &&  vUtilisateur.getPassword().equals(password)) {
                 if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
                         // Ajout de l'utilisateur en session
                         this.session.put("utilisateur", utilisateur);
 
 
                     location =  pBiblioService.getLocation(utilisateur.getId());
+
+                    livre = pBiblioService.getLivre(location.getId());
+
+                    auteur = pBiblioService.getAuteur(livre.getAuteurId());
+
 
                         vResult = ActionSupport.SUCCESS;
                     } else {

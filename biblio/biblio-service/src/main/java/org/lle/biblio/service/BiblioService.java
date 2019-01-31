@@ -1,5 +1,7 @@
 package org.lle.biblio.service;
 
+import org.lle.biblio.model.bean.auteur.Auteur;
+import org.lle.biblio.model.bean.livre.Livre;
 import org.lle.biblio.model.bean.location.Location;
 import org.lle.biblio.model.bean.utilisateur.Utilisateur;
 import org.springframework.context.ApplicationContext;
@@ -45,7 +47,9 @@ public class BiblioService {
                 = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LoginServiceImpl vLoginService = vApplicationContext.getBean("LoginServiceImpl", LoginServiceImpl.class);
+
        Utilisateur vUtilisateur = vLoginService.doLogin(login, password);
+
         return vUtilisateur;
     }
 
@@ -54,13 +58,40 @@ public class BiblioService {
 
         ApplicationContext vApplicationContext
                 = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
         Location vLocation = vLocationService.getLocation(id);
+
         return vLocation;
 
     }
 
+    @WebMethod
+    public Livre getLivre(int id){
 
+    ApplicationContext vApplicationContext
+            = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
+    LivreServiceImpl vLivreService = vApplicationContext.getBean("LivreServiceImpl", LivreServiceImpl.class);
+
+    Livre vLivre = vLivreService.getLivre(id);
+
+    return vLivre;
+
+    }
+
+    @WebMethod
+    public Auteur getAuteur(int id){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        AuteurServiceImpl vAuteurService = vApplicationContext.getBean("AuteurServiceImpl", AuteurServiceImpl.class);
+
+        Auteur vAuteur = vAuteurService.getAuteur(id);
+
+        return vAuteur;
+
+    }
 }
