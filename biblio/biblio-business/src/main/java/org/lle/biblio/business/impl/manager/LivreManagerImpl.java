@@ -5,6 +5,7 @@ import org.lle.biblio.model.bean.livre.Livre;
 import org.lle.biblio.model.exception.NotFoundException;
 
 import javax.inject.Named;
+import java.util.List;
 
 /**
  * Created by TheAdmin on 30.01.2019.
@@ -13,6 +14,7 @@ import javax.inject.Named;
 public class LivreManagerImpl extends AbstractManager implements LivreManager {
 
     private Livre vLivre;
+    private List<Livre> vListLivre;
 
     @Override
     public Livre getLivre(int id) {
@@ -24,6 +26,13 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
         }
 
         return vLivre;
+    }
+
+    @Override
+    public List<Livre> getListLivre() throws NotFoundException {
+        vListLivre = getDaoFactory().getLivreDao().getListLivre();
+
+        return vListLivre;
     }
 
 }

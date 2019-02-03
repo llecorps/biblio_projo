@@ -25,10 +25,13 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _DoLogin_QNAME = new QName("http://service.biblio.lle.org/", "DoLogin");
+    private final static QName _NotFoundException_QNAME = new QName("http://service.biblio.lle.org/", "NotFoundException");
     private final static QName _SetLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "setLoginResponse");
+    private final static QName _DoListLivreResponse_QNAME = new QName("http://service.biblio.lle.org/", "DoListLivreResponse");
     private final static QName _GetLocation_QNAME = new QName("http://service.biblio.lle.org/", "getLocation");
     private final static QName _GetAuteurResponse_QNAME = new QName("http://service.biblio.lle.org/", "getAuteurResponse");
     private final static QName _SetPassword_QNAME = new QName("http://service.biblio.lle.org/", "setPassword");
+    private final static QName _DoListLivre_QNAME = new QName("http://service.biblio.lle.org/", "DoListLivre");
     private final static QName _GetLocationResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLocationResponse");
     private final static QName _DoLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "DoLoginResponse");
     private final static QName _GetLivreResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLivreResponse");
@@ -46,6 +49,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link DoListLivre }
+     * 
+     */
+    public DoListLivre createDoListLivre() {
+        return new DoListLivre();
     }
 
     /**
@@ -81,6 +92,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DoListLivreResponse }
+     * 
+     */
+    public DoListLivreResponse createDoListLivreResponse() {
+        return new DoListLivreResponse();
+    }
+
+    /**
      * Create an instance of {@link DoLoginResponse }
      * 
      */
@@ -102,6 +121,14 @@ public class ObjectFactory {
      */
     public SetLoginResponse createSetLoginResponse() {
         return new SetLoginResponse();
+    }
+
+    /**
+     * Create an instance of {@link NotFoundException }
+     * 
+     */
+    public NotFoundException createNotFoundException() {
+        return new NotFoundException();
     }
 
     /**
@@ -218,12 +245,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NotFoundException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "NotFoundException")
+    public JAXBElement<NotFoundException> createNotFoundException(NotFoundException value) {
+        return new JAXBElement<NotFoundException>(_NotFoundException_QNAME, NotFoundException.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SetLoginResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setLoginResponse")
     public JAXBElement<SetLoginResponse> createSetLoginResponse(SetLoginResponse value) {
         return new JAXBElement<SetLoginResponse>(_SetLoginResponse_QNAME, SetLoginResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DoListLivreResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "DoListLivreResponse")
+    public JAXBElement<DoListLivreResponse> createDoListLivreResponse(DoListLivreResponse value) {
+        return new JAXBElement<DoListLivreResponse>(_DoListLivreResponse_QNAME, DoListLivreResponse.class, null, value);
     }
 
     /**
@@ -251,6 +296,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setPassword")
     public JAXBElement<SetPassword> createSetPassword(SetPassword value) {
         return new JAXBElement<SetPassword>(_SetPassword_QNAME, SetPassword.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DoListLivre }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "DoListLivre")
+    public JAXBElement<DoListLivre> createDoListLivre(DoListLivre value) {
+        return new JAXBElement<DoListLivre>(_DoListLivre_QNAME, DoListLivre.class, null, value);
     }
 
     /**

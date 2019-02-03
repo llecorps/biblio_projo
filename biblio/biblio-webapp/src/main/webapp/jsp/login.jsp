@@ -42,5 +42,6 @@
 </div>
 
     <%@ include file="./_include/scripts.jsp" %>
+    <%@ include file="./_include/footer.jsp" %>
 </body>
 </html>

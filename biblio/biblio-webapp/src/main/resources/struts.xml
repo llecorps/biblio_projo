@@ -77,12 +77,11 @@
     <package name="private" extends="base">
         <default-interceptor-ref name="authenticatedStack" />
 
-        <action name="Espace" class="org.lle.biblio.webapp.action.EspaceAction" method="doSpaceUser">
-            <result name="input">/jsp/utilisateur/account.jsp</result>
-            <result name="success" type="redirectAction">
-                <param name="actionName">channel</param>
-                <param name="channel">${channel.name}</param>
-            </result>
+        <action name="recherche" class="org.lle.biblio.webapp.action.RechercheAction" method="doRecherche">
+            <result name="input">/jsp/recherche/search.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success">/jsp/recherche/result.jsp</result>
+
         </action>
 
 

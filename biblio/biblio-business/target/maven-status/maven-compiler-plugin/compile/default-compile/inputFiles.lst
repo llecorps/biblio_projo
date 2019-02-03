@@ -1,8 +1,10 @@
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\impl\manager\UtilisateurManagerImpl.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\contract\manager\UtilisateurManager.java
+C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\impl\manager\AuteurManagerImpl.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\contract\manager\LivreManager.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\impl\ManagerFactoryImpl.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\impl\manager\AbstractManager.java
+C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\contract\manager\AuteurManager.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\contract\ManagerFactory.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\impl\manager\LivreManagerImpl.java
 C:\apps\dev\biblio_projo\biblio\biblio-business\src\main\java\org\lle\biblio\business\contract\manager\LocationManager.java

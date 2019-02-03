@@ -5,11 +5,14 @@ import org.lle.biblio.consumer.impl.rowmapper.livre.LivreRM;
 import org.lle.biblio.model.bean.livre.Livre;
 import org.lle.biblio.model.exception.NotFoundException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.List;
 
 /**
  * Created by TheAdmin on 30.01.2019.
@@ -34,4 +37,17 @@ public class LivreDaoImpl extends AbstractDaoImpl implements LivreDao {
             throw new NotFoundException("Livre non trouvé id=" + pId);
         }
     }
+
+    @Override
+    public List<Livre> getListLivre() throws NotFoundException {
+        String vSQL = "SELECT * FROM livre";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+        RowMapper<Livre> vRowMapper = new LivreRM();
+
+        List<Livre> vList = vJdbcTemplate.query(vSQL, vRowMapper);
+        return vList;
+    }
+
+
 }
