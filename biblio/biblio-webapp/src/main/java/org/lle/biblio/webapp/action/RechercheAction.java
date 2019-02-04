@@ -1,5 +1,6 @@
 package org.lle.biblio.webapp.action;
 
+
 import com.opensymphony.xwork2.ActionSupport;
 import org.lle.biblio.model.exception.NotFoundException;
 import org.lle.biblio.webapp.generated.BiblioService;
@@ -16,6 +17,16 @@ public class RechercheAction extends ActionSupport {
 
 
     private List<Livre> ListLivre;
+    private List<Livre> ResultLivre;
+    private Livre livre;
+
+    public Livre getLivre() {
+        return livre;
+    }
+
+    public void setLivre(Livre livre) {
+        this.livre = livre;
+    }
 
     public List<Livre> getListLivre() {
         return ListLivre;
@@ -32,6 +43,16 @@ public class RechercheAction extends ActionSupport {
         BiblioService_Service pBiblio = new BiblioService_Service();
 
         BiblioService pBiblioService = pBiblio.getBiblioServicePort();
+
+        if (this.livre != null) {
+
+            System.out.println("le genre est:"+livre.getGenre());
+
+
+            vResult = ActionSupport.SUCCESS;
+
+        }
+
 
         if (vResult.equals(ActionSupport.INPUT)) {
             this.ListLivre = pBiblioService.doListLivre();

@@ -44,26 +44,19 @@ public interface BiblioService {
     /**
      * 
      * @return
-     *     returns java.lang.String
+     *     returns java.util.List<org.lle.biblio.webapp.generated.Livre>
+     * @throws NotFoundException_Exception
      */
-    @WebMethod
+    @WebMethod(operationName = "DoListLivre")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getPassword", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetPassword")
-    @ResponseWrapper(localName = "getPasswordResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetPasswordResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/getPasswordRequest", output = "http://service.biblio.lle.org/BiblioService/getPasswordResponse")
-    public String getPassword();
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "setPassword", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetPassword")
-    @ResponseWrapper(localName = "setPasswordResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetPasswordResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/setPasswordRequest", output = "http://service.biblio.lle.org/BiblioService/setPasswordResponse")
-    public void setPassword(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+    @RequestWrapper(localName = "DoListLivre", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.DoListLivre")
+    @ResponseWrapper(localName = "DoListLivreResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.DoListLivreResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/DoListLivreRequest", output = "http://service.biblio.lle.org/BiblioService/DoListLivreResponse", fault = {
+        @FaultAction(className = NotFoundException_Exception.class, value = "http://service.biblio.lle.org/BiblioService/DoListLivre/Fault/NotFoundException")
+    })
+    public List<Livre> doListLivre()
+        throws NotFoundException_Exception
+    ;
 
     /**
      * 
@@ -85,33 +78,6 @@ public interface BiblioService {
 
     /**
      * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLogin", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLogin")
-    @ResponseWrapper(localName = "getLoginResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLoginResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/getLoginRequest", output = "http://service.biblio.lle.org/BiblioService/getLoginResponse")
-    public String getLogin();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns org.lle.biblio.webapp.generated.Livre
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLivre", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLivre")
-    @ResponseWrapper(localName = "getLivreResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLivreResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/getLivreRequest", output = "http://service.biblio.lle.org/BiblioService/getLivreResponse")
-    public Livre getLivre(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns org.lle.biblio.webapp.generated.Auteur
@@ -128,30 +94,36 @@ public interface BiblioService {
     /**
      * 
      * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "setLogin", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetLogin")
-    @ResponseWrapper(localName = "setLoginResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.SetLoginResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/setLoginRequest", output = "http://service.biblio.lle.org/BiblioService/setLoginResponse")
-    public void setLogin(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<org.lle.biblio.webapp.generated.Livre>
      * @throws NotFoundException_Exception
      */
-    @WebMethod(operationName = "DoListLivre")
+    @WebMethod(operationName = "DoResultLivre")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DoListLivre", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.DoListLivre")
-    @ResponseWrapper(localName = "DoListLivreResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.DoListLivreResponse")
-    @Action(input = "http://service.biblio.lle.org/BiblioService/DoListLivreRequest", output = "http://service.biblio.lle.org/BiblioService/DoListLivreResponse", fault = {
-        @FaultAction(className = NotFoundException_Exception.class, value = "http://service.biblio.lle.org/BiblioService/DoListLivre/Fault/NotFoundException")
+    @RequestWrapper(localName = "DoResultLivre", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.DoResultLivre")
+    @ResponseWrapper(localName = "DoResultLivreResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.DoResultLivreResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/DoResultLivreRequest", output = "http://service.biblio.lle.org/BiblioService/DoResultLivreResponse", fault = {
+        @FaultAction(className = NotFoundException_Exception.class, value = "http://service.biblio.lle.org/BiblioService/DoResultLivre/Fault/NotFoundException")
     })
-    public List<Livre> doListLivre()
+    public List<Livre> doResultLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
         throws NotFoundException_Exception
     ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns org.lle.biblio.webapp.generated.Livre
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getLivre", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLivre")
+    @ResponseWrapper(localName = "getLivreResponse", targetNamespace = "http://service.biblio.lle.org/", className = "org.lle.biblio.webapp.generated.GetLivreResponse")
+    @Action(input = "http://service.biblio.lle.org/BiblioService/getLivreRequest", output = "http://service.biblio.lle.org/BiblioService/getLivreResponse")
+    public Livre getLivre(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
 }

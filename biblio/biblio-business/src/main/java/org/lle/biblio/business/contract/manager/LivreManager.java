@@ -12,4 +12,5 @@ public interface LivreManager {
 
     Livre getLivre (int id);
     List<Livre> getListLivre() throws NotFoundException;
+    List<Livre> getResultLivre(String chaine) throws NotFoundException;
 }

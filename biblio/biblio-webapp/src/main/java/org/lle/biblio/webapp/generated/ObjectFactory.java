@@ -26,23 +26,17 @@ public class ObjectFactory {
 
     private final static QName _DoLogin_QNAME = new QName("http://service.biblio.lle.org/", "DoLogin");
     private final static QName _NotFoundException_QNAME = new QName("http://service.biblio.lle.org/", "NotFoundException");
-    private final static QName _SetLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "setLoginResponse");
+    private final static QName _DoResultLivreResponse_QNAME = new QName("http://service.biblio.lle.org/", "DoResultLivreResponse");
+    private final static QName _DoResultLivre_QNAME = new QName("http://service.biblio.lle.org/", "DoResultLivre");
     private final static QName _DoListLivreResponse_QNAME = new QName("http://service.biblio.lle.org/", "DoListLivreResponse");
     private final static QName _GetLocation_QNAME = new QName("http://service.biblio.lle.org/", "getLocation");
     private final static QName _GetAuteurResponse_QNAME = new QName("http://service.biblio.lle.org/", "getAuteurResponse");
-    private final static QName _SetPassword_QNAME = new QName("http://service.biblio.lle.org/", "setPassword");
     private final static QName _DoListLivre_QNAME = new QName("http://service.biblio.lle.org/", "DoListLivre");
     private final static QName _GetLocationResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLocationResponse");
     private final static QName _DoLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "DoLoginResponse");
     private final static QName _GetLivreResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLivreResponse");
-    private final static QName _SetPasswordResponse_QNAME = new QName("http://service.biblio.lle.org/", "setPasswordResponse");
-    private final static QName _GetPasswordResponse_QNAME = new QName("http://service.biblio.lle.org/", "getPasswordResponse");
-    private final static QName _GetLoginResponse_QNAME = new QName("http://service.biblio.lle.org/", "getLoginResponse");
     private final static QName _GetAuteur_QNAME = new QName("http://service.biblio.lle.org/", "getAuteur");
-    private final static QName _GetPassword_QNAME = new QName("http://service.biblio.lle.org/", "getPassword");
-    private final static QName _GetLogin_QNAME = new QName("http://service.biblio.lle.org/", "getLogin");
     private final static QName _GetLivre_QNAME = new QName("http://service.biblio.lle.org/", "getLivre");
-    private final static QName _SetLogin_QNAME = new QName("http://service.biblio.lle.org/", "setLogin");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.lle.biblio.webapp.generated
@@ -73,14 +67,6 @@ public class ObjectFactory {
      */
     public GetAuteurResponse createGetAuteurResponse() {
         return new GetAuteurResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetPassword }
-     * 
-     */
-    public SetPassword createSetPassword() {
-        return new SetPassword();
     }
 
     /**
@@ -116,14 +102,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetLoginResponse }
-     * 
-     */
-    public SetLoginResponse createSetLoginResponse() {
-        return new SetLoginResponse();
-    }
-
-    /**
      * Create an instance of {@link NotFoundException }
      * 
      */
@@ -140,27 +118,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLogin }
+     * Create an instance of {@link DoResultLivre }
      * 
      */
-    public GetLogin createGetLogin() {
-        return new GetLogin();
+    public DoResultLivre createDoResultLivre() {
+        return new DoResultLivre();
     }
 
     /**
-     * Create an instance of {@link GetPassword }
+     * Create an instance of {@link DoResultLivreResponse }
      * 
      */
-    public GetPassword createGetPassword() {
-        return new GetPassword();
-    }
-
-    /**
-     * Create an instance of {@link SetLogin }
-     * 
-     */
-    public SetLogin createSetLogin() {
-        return new SetLogin();
+    public DoResultLivreResponse createDoResultLivreResponse() {
+        return new DoResultLivreResponse();
     }
 
     /**
@@ -172,35 +142,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPasswordResponse }
-     * 
-     */
-    public GetPasswordResponse createGetPasswordResponse() {
-        return new GetPasswordResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetPasswordResponse }
-     * 
-     */
-    public SetPasswordResponse createSetPasswordResponse() {
-        return new SetPasswordResponse();
-    }
-
-    /**
      * Create an instance of {@link GetAuteur }
      * 
      */
     public GetAuteur createGetAuteur() {
         return new GetAuteur();
-    }
-
-    /**
-     * Create an instance of {@link GetLoginResponse }
-     * 
-     */
-    public GetLoginResponse createGetLoginResponse() {
-        return new GetLoginResponse();
     }
 
     /**
@@ -254,12 +200,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetLoginResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DoResultLivreResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setLoginResponse")
-    public JAXBElement<SetLoginResponse> createSetLoginResponse(SetLoginResponse value) {
-        return new JAXBElement<SetLoginResponse>(_SetLoginResponse_QNAME, SetLoginResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "DoResultLivreResponse")
+    public JAXBElement<DoResultLivreResponse> createDoResultLivreResponse(DoResultLivreResponse value) {
+        return new JAXBElement<DoResultLivreResponse>(_DoResultLivreResponse_QNAME, DoResultLivreResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DoResultLivre }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "DoResultLivre")
+    public JAXBElement<DoResultLivre> createDoResultLivre(DoResultLivre value) {
+        return new JAXBElement<DoResultLivre>(_DoResultLivre_QNAME, DoResultLivre.class, null, value);
     }
 
     /**
@@ -287,15 +242,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getAuteurResponse")
     public JAXBElement<GetAuteurResponse> createGetAuteurResponse(GetAuteurResponse value) {
         return new JAXBElement<GetAuteurResponse>(_GetAuteurResponse_QNAME, GetAuteurResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetPassword }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setPassword")
-    public JAXBElement<SetPassword> createSetPassword(SetPassword value) {
-        return new JAXBElement<SetPassword>(_SetPassword_QNAME, SetPassword.class, null, value);
     }
 
     /**
@@ -335,33 +281,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetPasswordResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setPasswordResponse")
-    public JAXBElement<SetPasswordResponse> createSetPasswordResponse(SetPasswordResponse value) {
-        return new JAXBElement<SetPasswordResponse>(_SetPasswordResponse_QNAME, SetPasswordResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPasswordResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getPasswordResponse")
-    public JAXBElement<GetPasswordResponse> createGetPasswordResponse(GetPasswordResponse value) {
-        return new JAXBElement<GetPasswordResponse>(_GetPasswordResponse_QNAME, GetPasswordResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLoginResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getLoginResponse")
-    public JAXBElement<GetLoginResponse> createGetLoginResponse(GetLoginResponse value) {
-        return new JAXBElement<GetLoginResponse>(_GetLoginResponse_QNAME, GetLoginResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetAuteur }{@code >}}
      * 
      */
@@ -371,39 +290,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPassword }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getPassword")
-    public JAXBElement<GetPassword> createGetPassword(GetPassword value) {
-        return new JAXBElement<GetPassword>(_GetPassword_QNAME, GetPassword.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLogin }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getLogin")
-    public JAXBElement<GetLogin> createGetLogin(GetLogin value) {
-        return new JAXBElement<GetLogin>(_GetLogin_QNAME, GetLogin.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLivre }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "getLivre")
     public JAXBElement<GetLivre> createGetLivre(GetLivre value) {
         return new JAXBElement<GetLivre>(_GetLivre_QNAME, GetLivre.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetLogin }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://service.biblio.lle.org/", name = "setLogin")
-    public JAXBElement<SetLogin> createSetLogin(SetLogin value) {
-        return new JAXBElement<SetLogin>(_SetLogin_QNAME, SetLogin.class, null, value);
     }
 
 }

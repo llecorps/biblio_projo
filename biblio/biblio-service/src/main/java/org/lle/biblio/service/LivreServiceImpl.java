@@ -34,8 +34,16 @@ public class LivreServiceImpl extends AbstractService {
 
         List<Livre> vListLivre = new ArrayList();
 
-
         vListLivre = getManagerFactory().getLivreManager().getListLivre();
+
+        return vListLivre;
+    }
+
+    public List<Livre> getResultLivre(String chaine) throws NotFoundException {
+
+        List<Livre> vListLivre = new ArrayList();
+
+        vListLivre = getManagerFactory().getLivreManager().getResultLivre(chaine);
 
         return vListLivre;
     }

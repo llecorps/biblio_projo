@@ -21,9 +21,9 @@
 
 
         <s:select label="Recherche par genre"
-                  list="ListLivre" listKey="id" listValue="genre"
+                  list="ListLivre" listKey="genre" listValue="genre"
                   emptyOption="true"
-                  name="search.notation" />
+                  name="livre.genre" />
 
 
         <s:submit value="OK"/>

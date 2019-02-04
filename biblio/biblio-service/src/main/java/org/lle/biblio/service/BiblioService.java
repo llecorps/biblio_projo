@@ -19,29 +19,7 @@ import java.util.List;
 @WebService(serviceName = "BiblioService")
 public class BiblioService {
 
-    // ==================== Attributs ====================
-    // ----- Paramètres en entrée
-    private String login;
-    private String password;
 
-    // ==================== Getters/Setters ====================
-
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @WebMethod
     public Utilisateur DoLogin(String login, String password){
@@ -107,6 +85,20 @@ public class BiblioService {
 
         List<Livre> vListLivre =  new ArrayList<>();
         vListLivre = vLivreService.getListLivre();
+
+        return vListLivre;
+
+    }
+    @WebMethod
+    public List<Livre> DoResultLivre(String chaine) throws NotFoundException {
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LivreServiceImpl vLivreService = vApplicationContext.getBean("LivreServiceImpl", LivreServiceImpl.class);
+
+        List<Livre> vListLivre =  new ArrayList<>();
+        vListLivre = vLivreService.getResultLivre(chaine);
 
         return vListLivre;
 

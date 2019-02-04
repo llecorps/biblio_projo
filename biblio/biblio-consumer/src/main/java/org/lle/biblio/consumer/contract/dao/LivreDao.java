@@ -12,4 +12,5 @@ public interface LivreDao {
 
     Livre getLivre (int id) throws NotFoundException;
     List<Livre> getListLivre() throws NotFoundException;
+    List<Livre> getResultLivre(String chaine) throws NotFoundException;
 }

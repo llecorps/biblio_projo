@@ -35,4 +35,10 @@ public class LivreManagerImpl extends AbstractManager implements LivreManager {
         return vListLivre;
     }
 
+    @Override
+    public List<Livre> getResultLivre(String chaine) throws NotFoundException {
+        vListLivre = getDaoFactory().getLivreDao().getResultLivre(chaine);
+        return vListLivre;
+    }
+
 }

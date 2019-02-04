@@ -38,9 +38,6 @@
 
 </div>
 
-<s:a action="voie_new"><s:text name="nav.addWay" /></s:a>
-<s:a action="comment_new"><s:text name="nav.newComment" /></s:a>
-
 
 </div>
 </body>

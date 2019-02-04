@@ -118,6 +118,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
                 utilisateur = pBiblioService.doLogin(login, password);
 
 
+
                 if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
                         // Ajout de l'utilisateur en session
                         this.session.put("utilisateur", utilisateur);
