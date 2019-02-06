@@ -18,27 +18,20 @@
     <h2>Résultat</h2>
 
     <ul class="list-group list-group-flush">
-        <s:iterator value="listTopo">
+        <s:iterator value="ResultLivre">
             <li class="list-group-item d-flex justify-content-between align-items-center">
 
-                <s:a action="topo_detail">
+                <s:a action="livre_detail">
                     <s:param name="id" value="id" />
 
-                    <s:property value="libelle"/>
-
+                    <s:property value="titre"/>&nbsp
+                    -&nbsp<s:property value="description"/>&nbsp
                 </s:a>
-
-
-            </li>
 
             </li>
         </s:iterator>
     </ul>
-
-
 </div>
-
-
-</div>
+<%@ include file="../_include/footer.jsp" %>
 </body>
 </html>

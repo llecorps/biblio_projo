@@ -84,8 +84,27 @@
 
         </action>
 
+        <action name="livre_detail"
+                class="org.lle.biblio.webapp.action.LivreAction"
+                method="doDetail">
+            <result name="success">/jsp/livre/livredetail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
 
+        <action name="emprunt" class="org.lle.biblio.webapp.action.LivreAction" method="doRent">
 
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <interceptor-ref name="authenticatedStack" />
+
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success">
+               /jsp/utilisateur/emprunt.jsp
+
+            </result>
+        </action>
 
     </package>
 

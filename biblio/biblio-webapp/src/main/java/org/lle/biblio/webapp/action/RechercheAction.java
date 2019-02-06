@@ -20,6 +20,14 @@ public class RechercheAction extends ActionSupport {
     private List<Livre> ResultLivre;
     private Livre livre;
 
+    public List<Livre> getResultLivre() {
+        return ResultLivre;
+    }
+
+    public void setResultLivre(List<Livre> resultLivre) {
+        ResultLivre = resultLivre;
+    }
+
     public Livre getLivre() {
         return livre;
     }
@@ -46,8 +54,9 @@ public class RechercheAction extends ActionSupport {
 
         if (this.livre != null) {
 
-            System.out.println("le genre est:"+livre.getGenre());
+            //System.out.println("le genre est:"+livre.getGenre());
 
+            this.ResultLivre = pBiblioService.doResultLivre(livre.getGenre());
 
             vResult = ActionSupport.SUCCESS;
 
