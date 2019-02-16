@@ -23,9 +23,20 @@
         <li>Email : <s:property value="utilisateur.email" /></li>
         <li>Adress : <s:property value="utilisateur.adress" /></li>
         <li>Phone : <s:property value="utilisateur.phone" /></li>
-        <li>Location : <s:property value="location.livreId" /> Date: <s:property value="location.expiredate" /> </li>
-        <li>Livre : <s:property value="livre.titre" /> Description: <s:property value="livre.description" /> </li>
-        <li>Auteur : <s:property value="auteur.prenom" /> <s:property value="auteur.nom" /> </li>
+
+
+        <ul class="list-group list-group-flush">
+        <s:iterator value="listEmprunt">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <s:property value="nom"/>
+            <s:property value="titre"/>
+            <s:property value="description"/>
+            <s:property value="genre"/>
+            <s:property value="expiredate"/>
+            <s:submit value="Prolongation" class="btn btn-outline-success"/>
+        </li>
+        </s:iterator>
+        </ul>
 
     </s:if>
 

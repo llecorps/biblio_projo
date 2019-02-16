@@ -6,10 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.lle.biblio.business.contract.ManagerFactory;
+import org.lle.biblio.model.bean.emprunt.Emprunt;
 import org.lle.biblio.webapp.generated.*;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
@@ -83,6 +86,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     // ----- Paramètres en entrée
     private String login;
     private String password;
+    private List<Location> listLocation;
+    private List<Emprunt> listEmprunt;
 
     // ==================== Getters/Setters ====================
     public String getLogin() {
@@ -98,7 +103,23 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     public void setPassword(String password) {
         this.password = password;
     }
-// ==================== Méthodes ====================
+
+    public List<Location> getListLocation() {
+        return listLocation;
+    }
+
+    public void setListLocation(List<Location> listLocation) {
+        this.listLocation = listLocation;
+    }
+
+    public List<Emprunt> getListEmprunt() {
+        return listEmprunt;
+    }
+
+    public void setListEmprunt(List<Emprunt> listEmprunt) {
+        this.listEmprunt = listEmprunt;
+    }
+    // ==================== Méthodes ====================
         /**
          * Action permettant la connexion d'un utilisateur
          * @return input / success
@@ -124,13 +145,29 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
                         this.session.put("utilisateur", utilisateur);
 
 
-                    location =  pBiblioService.getLocation(utilisateur.getId());
+                   // location =  pBiblioService.getLocation(utilisateur.getId());
 
-                    livre = pBiblioService.getLivre(location.getId());
+                    listLocation = pBiblioService.getListLocation(utilisateur.getId());
+                    listEmprunt = new ArrayList<Emprunt>();
 
-                    auteur = pBiblioService.getAuteur(livre.getAuteurId());
+                    for (Location loc : listLocation){
 
+                        Emprunt vEmprunt = new Emprunt();
 
+                        livre = pBiblioService.getLivre(loc.getLivreId());
+                        auteur = pBiblioService.getAuteur(livre.getAuteurId());
+
+                        vEmprunt.setTitre(livre.getTitre());
+                        vEmprunt.setDescription(livre.getDescription());
+                        vEmprunt.setGenre(livre.getGenre());
+                        vEmprunt.setExpiredate(loc.getExpiredate());
+                        vEmprunt.setNom(auteur.getNom());
+
+                        listEmprunt.add(vEmprunt);
+
+                    }
+                   // livre = pBiblioService.getLivre(location.getId());
+                    //auteur = pBiblioService.getAuteur(livre.getAuteurId());
                         vResult = ActionSupport.SUCCESS;
                     } else {
 

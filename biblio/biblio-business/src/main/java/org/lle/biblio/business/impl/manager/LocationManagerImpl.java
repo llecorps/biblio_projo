@@ -5,6 +5,7 @@ import org.lle.biblio.model.bean.location.Location;
 import org.lle.biblio.model.exception.NotFoundException;
 
 import javax.inject.Named;
+import java.util.List;
 
 /**
  * Created by TheAdmin on 27.01.2019.
@@ -25,5 +26,33 @@ public class LocationManagerImpl extends AbstractManager implements LocationMana
         }
 
         return vLocation;
+    }
+
+    @Override
+    public int getExemplaire(int id) {
+
+        int vExemplaire = 0;
+        try {
+            vExemplaire = getDaoFactory().getLocationDao().getExemplaire(id);
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return vExemplaire;
+    }
+
+    @Override
+    public void addEmprunt(Location pLocation) {
+
+        getDaoFactory().getLocationDao().addEmprunt(pLocation);
+
+    }
+
+    @Override
+    public List<Location> getListLocation(int id) {
+
+        List<Location> vListLocation = getDaoFactory().getLocationDao().getListLocation(id);
+
+        return vListLocation;
     }
 }

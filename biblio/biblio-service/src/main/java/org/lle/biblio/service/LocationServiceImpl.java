@@ -2,6 +2,8 @@ package org.lle.biblio.service;
 
 import org.lle.biblio.model.bean.location.Location;
 
+import java.util.List;
+
 /**
  * Created by TheAdmin on 28.01.2019.
  */
@@ -21,5 +23,22 @@ public class LocationServiceImpl extends AbstractService{
 
         Location vLocation = getManagerFactory().getLocationManager().getLocation(id);
         return vLocation;
+    }
+    public int getExemplaire(int id){
+
+        int vExemplaire = getManagerFactory().getLocationManager().getExemplaire(id);
+        return vExemplaire;
+    }
+
+    public void addEmprunt(Location pLocation){
+
+        getManagerFactory().getLocationManager().addEmprunt(pLocation);
+        }
+
+    public List<Location> getListLocation(int id){
+
+        List<Location> vListLocation = getManagerFactory().getLocationManager().getListLocation(id);
+
+        return vListLocation;
     }
 }

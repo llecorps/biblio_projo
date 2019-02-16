@@ -49,6 +49,46 @@ public class BiblioService {
     }
 
     @WebMethod
+    public List<Location> getListLocation( int id){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        List<Location> vListLocation = vLocationService.getListLocation(id);
+
+        return  vListLocation;
+    }
+
+
+    @WebMethod
+    public void addLocation(Location pLocation){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        vLocationService.addEmprunt(pLocation);
+
+    }
+
+    @WebMethod
+    public int getExemplaire(int id){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        int vExemplaire = vLocationService.getExemplaire(id);
+
+        return vExemplaire;
+
+    }
+
+    @WebMethod
     public Livre getLivre(int id){
 
     ApplicationContext vApplicationContext

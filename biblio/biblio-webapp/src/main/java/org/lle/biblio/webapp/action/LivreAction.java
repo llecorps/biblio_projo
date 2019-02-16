@@ -91,25 +91,31 @@ public class LivreAction extends ActionSupport implements SessionAware {
 
             livre = pBiblioService.getLivre(id);
 
-            //int vNbreEmprunt = pBiblioService
             //test exemplaire
+            int vExmplaire = pBiblioService.getExemplaire(livre.getId());
+            if (vExmplaire == livre.getExemplaire()){
 
-            //date
+                System.out.println("ouvrage non disponible!");
 
-            Date today = new Date();
-            long time = today.getTime();
-            time += 14*24*60*60*1000;
+            }else {
 
-            Calendar expireDate = Calendar.getInstance();
-            expireDate.add(Calendar.DATE,14);
+                Calendar expireDate = Calendar.getInstance();
+                expireDate.add(Calendar.DATE, 28);
+                Date date = expireDate.getTime();
+                SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd");
+                String dateRetour = formatter.format(date);
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
-            String Datejour = formatter.format(expireDate);
+                Utilisateur vUser = (Utilisateur) this.session.get("utilisateur");
 
+                Location pLocation = new Location();
+                pLocation.setExpiredate(dateRetour);
+                pLocation.setLivreId(livre.getId());
+                pLocation.setUtilisateurId(vUser.getId());
+                pLocation.setProlongation(true);
 
-            Utilisateur vUser = (Utilisateur) this.session.get("utilisateur");
-            System.out.println("User :"+vUser.getLogin());
-            System.out.println("DateDuJour :"+Datejour);
+                pBiblioService.addLocation(pLocation);
+
+            }
         }
 
 
