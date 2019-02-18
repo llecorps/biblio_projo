@@ -10,7 +10,9 @@ import java.util.List;
 public interface LocationManager {
 
     Location getLocation (int id);
+    Location getLivrelocation (int id);
     int getExemplaire (int id);
     void addEmprunt(Location pLocation );
     List<Location> getListLocation(int id);
+    void addProlo(String expiration, int id);
 }

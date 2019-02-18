@@ -144,9 +144,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
                         // Ajout de l'utilisateur en session
                         this.session.put("utilisateur", utilisateur);
 
-
-                   // location =  pBiblioService.getLocation(utilisateur.getId());
-
                     listLocation = pBiblioService.getListLocation(utilisateur.getId());
                     listEmprunt = new ArrayList<Emprunt>();
 
@@ -166,8 +163,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
                         listEmprunt.add(vEmprunt);
 
                     }
-                   // livre = pBiblioService.getLivre(location.getId());
-                    //auteur = pBiblioService.getAuteur(livre.getAuteurId());
+
                         vResult = ActionSupport.SUCCESS;
                     } else {
 

@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.sql.Types;
 import java.util.List;
 
 /**
@@ -43,6 +44,19 @@ public class LocationDaoImpl extends AbstractDaoImpl implements LocationDao {
             return vLocation;
         } catch (IncorrectResultSizeDataAccessException vEx) {
             throw new NotFoundException("Emprunt non trouvé utilisateur_id=" + pId);
+        }
+    }
+
+    @Override
+    public Location getLivrelocation(int pId) throws NotFoundException {
+        String vSQL = "SELECT * FROM location WHERE livre_id ="+pId;
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+        MapSqlParameterSource vParams = new MapSqlParameterSource("livre_id", pId);
+        try {
+            Location vLocation = vJdbcTemplate.queryForObject(vSQL, vParams, locationRM);
+            return vLocation;
+        } catch (IncorrectResultSizeDataAccessException vEx) {
+            throw new NotFoundException("Emprunt non trouvé livre_id=" + pId);
         }
     }
 
@@ -80,7 +94,7 @@ public class LocationDaoImpl extends AbstractDaoImpl implements LocationDao {
             vJdbcTemplate.update(vSQL, vParams);
 
         } catch (DuplicateKeyException vEx) {
-            LOGGER.error("Le TicketStatut existe déjà ! id=" + pLoc.getId(), vEx);
+            LOGGER.error("L'Emprunt existe déjà ! id=" + pLoc.getId(), vEx);
             // ...
         }
         
@@ -96,6 +110,25 @@ public class LocationDaoImpl extends AbstractDaoImpl implements LocationDao {
 
         List<Location> vListLocation = vJdbcTemplate.query(vSQL, vRowMapper);
         return vListLocation;
+    }
+
+    @Override
+    public void addProlo(String expiration, int pId) {
+
+        String simpleQuote = "'";
+        String expireDate = simpleQuote + expiration + simpleQuote;
+
+        String vSQL = "update location set expiredate="+expireDate+", prolongation=FALSE WHERE id="+pId+";COMMIT;";
+
+        MapSqlParameterSource vParams = new MapSqlParameterSource();
+        vParams.addValue("expiredate", expireDate, Types.VARCHAR);
+        vParams.addValue("id", pId, Types.INTEGER);
+
+        NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+
+        vJdbcTemplate.update(vSQL, vParams);
+
+
     }
 
 }

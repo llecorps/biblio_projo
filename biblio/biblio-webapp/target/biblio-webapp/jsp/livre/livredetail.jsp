@@ -32,9 +32,8 @@
 
 
 
-            <s:a action="emprunt" class="btn btn-primary">Emprunt
+            <s:a action="emprunt" class="btn btn-outline-success">Emprunt
               <s:param name="id" value="livre.id" />
-
             </s:a>
 
         </div>

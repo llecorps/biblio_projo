@@ -12,9 +12,13 @@ public interface LocationDao {
 
     Location getLocation (int id) throws NotFoundException;
 
+    Location getLivrelocation (int id) throws NotFoundException;
+
     int getExemplaire(int id) throws NotFoundException;
 
     void addEmprunt(Location pLoc);
 
     List<Location> getListLocation(int id);
+
+    void addProlo(String expiration, int id);
 }

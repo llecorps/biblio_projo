@@ -18,6 +18,15 @@ public class LivreAction extends ActionSupport implements SessionAware {
     private Livre livre;
     private Auteur auteur;
     private String login;
+    private Location location;
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public String getLogin() {
         return login;
@@ -121,4 +130,42 @@ public class LivreAction extends ActionSupport implements SessionAware {
 
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
     }
+
+
+    public String doProlo() {
+
+        BiblioService_Service pBiblio = new BiblioService_Service();
+
+        BiblioService pBiblioService = pBiblio.getBiblioServicePort();
+
+        if (id != null) {
+
+            System.out.println("Id du livre est:" +id);
+
+            location = pBiblioService.getLivrelocation(id);
+
+            Boolean bool = location.isProlongation();
+
+            if (location.isProlongation() == true){
+
+                Calendar expireDate = Calendar.getInstance();
+                expireDate.add(Calendar.DATE, 28);
+                Date date = expireDate.getTime();
+                SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd");
+                String dateRetour = formatter.format(date);
+
+                pBiblioService.addProlo(dateRetour,location.getId());
+
+            }else{
+
+                System.out.println("Prolongation non possible!");
+            }
+
+        }
+
+        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+
+    }
+
+
 }

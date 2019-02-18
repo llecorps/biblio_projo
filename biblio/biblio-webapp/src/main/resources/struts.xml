@@ -100,10 +100,25 @@
             <interceptor-ref name="authenticatedStack" />
 
             <result name="error">/jsp/error.jsp</result>
-            <result name="success">
-               /jsp/utilisateur/emprunt.jsp
+            <result name="success" type="redirectAction">display</result>
 
-            </result>
+        </action>
+
+        <action name="display" class="org.lle.biblio.webapp.action.DisplayAction" method="doDisplay">
+        <result>/jsp/utilisateur/display.jsp</result>
+        </action>
+
+        <action name="prolonger" class="org.lle.biblio.webapp.action.LivreAction" method="doProlo">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <interceptor-ref name="authenticatedStack" />
+
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success" type="redirectAction">display</result>
+
         </action>
 
     </package>

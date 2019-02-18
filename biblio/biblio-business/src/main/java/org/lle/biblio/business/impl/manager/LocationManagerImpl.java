@@ -29,6 +29,17 @@ public class LocationManagerImpl extends AbstractManager implements LocationMana
     }
 
     @Override
+    public Location getLivrelocation(int id) {
+        try {
+            vLocation = getDaoFactory().getLocationDao().getLivrelocation(id);
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return vLocation;
+    }
+
+    @Override
     public int getExemplaire(int id) {
 
         int vExemplaire = 0;
@@ -45,6 +56,13 @@ public class LocationManagerImpl extends AbstractManager implements LocationMana
     public void addEmprunt(Location pLocation) {
 
         getDaoFactory().getLocationDao().addEmprunt(pLocation);
+
+    }
+
+    @Override
+    public void addProlo(String expiration, int id) {
+
+        getDaoFactory().getLocationDao().addProlo(expiration,id);
 
     }
 

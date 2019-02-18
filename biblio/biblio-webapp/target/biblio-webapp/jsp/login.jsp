@@ -33,10 +33,13 @@
             <s:property value="description"/>
             <s:property value="genre"/>
             <s:property value="expiredate"/>
-            <s:submit value="Prolongation" class="btn btn-outline-success"/>
+            <s:a action="prolonger" class="btn btn-outline-success">Prolonger
+                <s:param name="id" value="livre.id" />
+            </s:a>
         </li>
         </s:iterator>
         </ul>
+
 
     </s:if>
 

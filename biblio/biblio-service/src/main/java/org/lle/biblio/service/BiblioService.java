@@ -49,6 +49,20 @@ public class BiblioService {
     }
 
     @WebMethod
+    public Location getLivrelocation(int id){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        Location vLocation = vLocationService.getLivrelocation(id);
+
+        return vLocation;
+
+    }
+
+    @WebMethod
     public List<Location> getListLocation( int id){
 
         ApplicationContext vApplicationContext
@@ -59,6 +73,18 @@ public class BiblioService {
         List<Location> vListLocation = vLocationService.getListLocation(id);
 
         return  vListLocation;
+    }
+
+    @WebMethod
+    public void addProlo( String expiration,int id){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        vLocationService.addProlo(expiration,id);
+
     }
 
 
