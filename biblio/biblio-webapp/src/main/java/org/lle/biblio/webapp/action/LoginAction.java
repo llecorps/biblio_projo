@@ -140,7 +140,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 
 
-                if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
+               // if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
+                if (utilisateur != null) {
                         // Ajout de l'utilisateur en session
                         this.session.put("utilisateur", utilisateur);
 

@@ -38,13 +38,17 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
         String simpleQuote="'";
         String username = simpleQuote+pLogin+simpleQuote;
         String pass = simpleQuote+pPassword+simpleQuote;
-
+/*
         String vSQL
                 = "SELECT * FROM utilisateur"
                 + " WHERE login = "+username
                 + " AND password = "+pass;
+*/
 
-
+        String vSQL
+                = "SELECT * FROM utilisateur"
+                + " WHERE login = "+username
+                + " AND password = crypt("+pass+",password)";
 
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         //MapSqlParameterSource vParams = new MapSqlParameterSource("login", username);

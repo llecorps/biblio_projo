@@ -16,6 +16,7 @@ C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webap
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\DoLogin.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\DoResultLivreResponse.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\ObjectFactory.java
+C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\GetLivrelocationResponse.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\GetAuteurResponse.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\GetLivreResponse.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\NotFoundException_Exception.java
@@ -33,3 +34,4 @@ C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webap
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\interceptor\AuthInterceptor.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\action\LivreAction.java
 C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\DoLoginResponse.java
+C:\apps\dev\biblio_projo\biblio\biblio-webapp\src\main\java\org\lle\biblio\webapp\generated\GetLivrelocation.java
