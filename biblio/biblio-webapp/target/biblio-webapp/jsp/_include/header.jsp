@@ -28,7 +28,7 @@
         </ul>
 
             Utilisateur connecté :
-            <s:property value="#session.utilisateur.pseudo" />
+            <s:property value="#session.utilisateur.login" />
             <s:a action="logout" ><s:text name="nav.goLout" />
 
             </s:a>

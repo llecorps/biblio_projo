@@ -8,7 +8,6 @@
           <file>file://$MODULE_DIR$/../biblio-consumer/src/main/resources/org/lle/biblio/consumer/consumerContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/bootstrapContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/org.lle.biblio.service/serviceContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>

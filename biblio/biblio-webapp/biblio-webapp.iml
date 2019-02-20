@@ -19,9 +19,7 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/../biblio-business/src/main/resources/org/lle/biblio/business/businessContext.xml</file>
-          <file>file://$MODULE_DIR$/../biblio-consumer/src/main/resources/org/lle/biblio/consumer/consumerContext.xml</file>
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/bootstrapContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/org/lle/biblio/webapp/webappContext.xml</file>
         </fileset>
