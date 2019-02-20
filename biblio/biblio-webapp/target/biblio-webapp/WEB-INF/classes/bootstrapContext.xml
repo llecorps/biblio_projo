@@ -19,5 +19,4 @@
     <import resource="classpath:/org/lle/biblio/business/businessContext.xml" />
     <import resource="classpath:/org/lle/biblio/consumer/consumerContext.xml" />
 
-
 </beans>

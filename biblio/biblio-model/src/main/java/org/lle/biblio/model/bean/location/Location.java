@@ -11,9 +11,6 @@ public class Location {
     private String expiredate;
     private boolean prolongation;
 
-    public Location() {
-    }
-
     public Location(int id, int utilisateur_id, int livre_id, String expiredate, boolean prolongation) {
         this.id = id;
         this.utilisateur_id = utilisateur_id;

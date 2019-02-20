@@ -8,14 +8,11 @@ public class Livre {
     private int id;
     private String titre;
     private int auteur_id;
-    private int exemplaire;
+    private String exemplaire;
     private String description;
     private String genre;
 
-    public Livre() {
-    }
-
-    public Livre(int id, String titre, int auteur_id, int exemplaire, String description, String genre) {
+    public Livre(int id, String titre, int auteur_id, String exemplaire, String description, String genre) {
         this.id = id;
         this.titre = titre;
         this.auteur_id = auteur_id;
@@ -48,11 +45,11 @@ public class Livre {
         this.auteur_id = auteur_id;
     }
 
-    public int getExemplaire() {
+    public String getExemplaire() {
         return exemplaire;
     }
 
-    public void setExemplaire(int exemplaire) {
+    public void setExemplaire(String exemplaire) {
         this.exemplaire = exemplaire;
     }
 

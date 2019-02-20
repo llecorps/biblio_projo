@@ -6,16 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.lle.biblio.business.contract.ManagerFactory;
-import org.lle.biblio.model.bean.emprunt.Emprunt;
-import org.lle.biblio.webapp.generated.*;
+import org.lle.biblio.model.bean.utilisateur.Utilisateur;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
-
-
 
 public class LoginAction extends ActionSupport implements ServletRequestAware, SessionAware {
 
@@ -26,25 +21,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     private Map<String, Object> session;
     private Utilisateur utilisateur;
     private String pseudo;
-    private Location location;
-    private Livre livre;
-    private Auteur auteur;
-
-    public Auteur getAuteur() {
-        return auteur;
-    }
-
-    public void setAuteur(Auteur auteur) {
-        this.auteur = auteur;
-    }
-
-    public Livre getLivre() {
-        return livre;
-    }
-
-    public void setLivre(Livre livre) {
-        this.livre = livre;
-    }
 
     public String getPseudo() {
         return pseudo;
@@ -60,14 +36,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     @Override
@@ -86,8 +54,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     // ----- Paramètres en entrée
     private String login;
     private String password;
-    private List<Location> listLocation;
-    private List<Emprunt> listEmprunt;
 
     // ==================== Getters/Setters ====================
     public String getLogin() {
@@ -103,23 +69,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public List<Location> getListLocation() {
-        return listLocation;
-    }
-
-    public void setListLocation(List<Location> listLocation) {
-        this.listLocation = listLocation;
-    }
-
-    public List<Emprunt> getListEmprunt() {
-        return listEmprunt;
-    }
-
-    public void setListEmprunt(List<Emprunt> listEmprunt) {
-        this.listEmprunt = listEmprunt;
-    }
-    // ==================== Méthodes ====================
+// ==================== Méthodes ====================
         /**
          * Action permettant la connexion d'un utilisateur
          * @return input / success
@@ -131,39 +81,15 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
             if (!StringUtils.isAllEmpty(login, password)) {
 
+                Utilisateur vUtilisateur
+                        = managerFactory.getUtilisateurManager()
+                        .getUtilisateur(login, password);
 
-                BiblioService_Service pBiblio = new BiblioService_Service();
-
-                BiblioService pBiblioService = pBiblio.getBiblioServicePort();
-
-                utilisateur = pBiblioService.doLogin(login, password);
-
-
-
-               // if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
-                if (utilisateur != null) {
+                //if (vUtilisateur.getUsername().equals(login) &&  vUtilisateur.getPassword().equals(password)) {
+                if (vUtilisateur.getLogin().equals(login) &&  vUtilisateur.getPassword().equals(password)) {
                         // Ajout de l'utilisateur en session
-                        this.session.put("utilisateur", utilisateur);
+                        this.session.put("utilisateur", vUtilisateur);
 
-                    listLocation = pBiblioService.getListLocation(utilisateur.getId());
-                    listEmprunt = new ArrayList<Emprunt>();
-
-                    for (Location loc : listLocation){
-
-                        Emprunt vEmprunt = new Emprunt();
-
-                        livre = pBiblioService.getLivre(loc.getLivreId());
-                        auteur = pBiblioService.getAuteur(livre.getAuteurId());
-
-                        vEmprunt.setTitre(livre.getTitre());
-                        vEmprunt.setDescription(livre.getDescription());
-                        vEmprunt.setGenre(livre.getGenre());
-                        vEmprunt.setExpiredate(loc.getExpiredate());
-                        vEmprunt.setNom(auteur.getNom());
-
-                        listEmprunt.add(vEmprunt);
-
-                    }
 
                         vResult = ActionSupport.SUCCESS;
                     } else {
@@ -186,8 +112,15 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
          */
         public String doLogout() {
 
-            // Invalidation de la session
+            Object vUser = this.session.get("utilisateur");
+
+            if (vUser instanceof Utilisateur) {
+               // managerFactory.getUtilisateurManager().deleteUtilisateur((Utilisateur) vUser);
+            }
+
             this.servletRequest.getSession().invalidate();
+
+
             return ActionSupport.SUCCESS;
         }
 
