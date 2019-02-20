@@ -15,19 +15,6 @@
 
     <h2><s:text name="nav.account" /></h2>
 
-    <s:if test="#session.utilisateur">
-        <s:a action="logout">Vous êtes déja connectés !</s:a>
-    </s:if>
-    <s:else>
-
-        <s:form action="account">
-
-            <s:textfield name="utilisateur.pseudo" label="Pseudo" requiredLabel="true" />
-
-            <s:submit value="OK"/>
-
-        </s:form>
-    </s:else>
 
 
 </div>

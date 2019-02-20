@@ -65,9 +65,9 @@
         <!-- Actions Login/Logout -->
         <action name="login" class="org.lle.biblio.webapp.action.LoginAction" method="doLogin">
             <result name="input">/jsp/login.jsp</result>
-            <result name="success" type="redirectAction">espace</result>
+            <result name="success">/jsp/login.jsp</result>
         </action>
-        <action name="logout" class="org.lel.biblio.webapp.action.LoginAction" method="doLogout">
+        <action name="logout" class="org.lle.biblio.webapp.action.LoginAction" method="doLogout">
             <result type="redirectAction">login</result>
         </action>
     </package>
@@ -77,9 +77,49 @@
     <package name="private" extends="base">
         <default-interceptor-ref name="authenticatedStack" />
 
+        <action name="recherche" class="org.lle.biblio.webapp.action.RechercheAction" method="doRecherche">
+            <result name="input">/jsp/recherche/search.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success">/jsp/recherche/result.jsp</result>
 
+        </action>
 
+        <action name="livre_detail"
+                class="org.lle.biblio.webapp.action.LivreAction"
+                method="doDetail">
+            <result name="success">/jsp/livre/livredetail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
 
+        <action name="emprunt" class="org.lle.biblio.webapp.action.LivreAction" method="doRent">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <interceptor-ref name="authenticatedStack" />
+
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success" type="redirectAction">display</result>
+
+        </action>
+
+        <action name="display" class="org.lle.biblio.webapp.action.DisplayAction" method="doDisplay">
+        <result>/jsp/utilisateur/display.jsp</result>
+        </action>
+
+        <action name="prolonger" class="org.lle.biblio.webapp.action.LivreAction" method="doProlo">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+            <interceptor-ref name="authenticatedStack" />
+
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success" type="redirectAction">display</result>
+
+        </action>
 
     </package>
 

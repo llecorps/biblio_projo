@@ -36,21 +36,19 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
     public Utilisateur getUtilisateur(String pLogin, String pPassword) throws NotFoundException {
 
         String simpleQuote="'";
-
         String username = simpleQuote+pLogin+simpleQuote;
         String pass = simpleQuote+pPassword+simpleQuote;
-
-        System.out.println("login:"+pLogin+"password:"+pPassword);
-
-
-        //String vSQL = "SELECT * FROM utilisateur WHERE login = :username AND password = :pass ";
-
+/*
         String vSQL
                 = "SELECT * FROM utilisateur"
                 + " WHERE login = "+username
                 + " AND password = "+pass;
+*/
 
-
+        String vSQL
+                = "SELECT * FROM utilisateur"
+                + " WHERE login = "+username
+                + " AND password = crypt("+pass+",password)";
 
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         //MapSqlParameterSource vParams = new MapSqlParameterSource("login", username);

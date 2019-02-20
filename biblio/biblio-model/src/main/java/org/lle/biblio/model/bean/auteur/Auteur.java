@@ -10,6 +10,9 @@ public class Auteur {
     private String nom;
     private String genre;
 
+    public Auteur() {
+    }
+
     public Auteur(int id, String prenom, String nom, String genre) {
         this.id = id;
         this.prenom = prenom;
