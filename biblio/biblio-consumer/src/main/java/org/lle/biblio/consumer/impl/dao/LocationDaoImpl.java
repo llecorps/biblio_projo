@@ -113,6 +113,18 @@ public class LocationDaoImpl extends AbstractDaoImpl implements LocationDao {
     }
 
     @Override
+    public List<Location> listLocation() {
+
+        String vSQL = "SELECT * FROM location ";
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+        RowMapper<Location> vRowMapper = new LocationRM();
+
+        List<Location> vListLocation = vJdbcTemplate.query(vSQL, vRowMapper);
+        return vListLocation;
+    }
+
+    @Override
     public void addProlo(String expiration, int pId) {
 
         String simpleQuote = "'";

@@ -48,6 +48,13 @@ public class LocationServiceImpl extends AbstractService{
         return vListLocation;
     }
 
+    public List<Location> listLocation(){
+
+        List<Location> vListLocation = getManagerFactory().getLocationManager().listLocation();
+
+        return vListLocation;
+    }
+
     public void addProlo ( String expiration, int id){
 
         getManagerFactory().getLocationManager().addProlo(expiration,id);

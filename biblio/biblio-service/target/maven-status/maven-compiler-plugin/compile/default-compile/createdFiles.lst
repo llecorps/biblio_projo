@@ -1,3 +1,4 @@
+org\lle\biblio\service\UtilisateurServiceImpl.class
 org\lle\biblio\service\AuteurServiceImpl.class
 org\lle\biblio\service\LocationServiceImpl.class
 org\lle\biblio\service\BiblioService.class

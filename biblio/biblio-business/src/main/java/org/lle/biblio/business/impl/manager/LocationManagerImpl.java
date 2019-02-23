@@ -73,4 +73,11 @@ public class LocationManagerImpl extends AbstractManager implements LocationMana
 
         return vListLocation;
     }
+
+    @Override
+    public List<Location> listLocation() {
+        List<Location> vListLocation = getDaoFactory().getLocationDao().listLocation();
+
+        return vListLocation;
+}
 }

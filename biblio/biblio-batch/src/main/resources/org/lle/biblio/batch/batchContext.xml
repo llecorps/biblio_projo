@@ -29,6 +29,10 @@
         <constructor-arg ref="dataSourceBiblioConfiguration" />
     </bean>
 
-    <bean id="TestLogin" class="org.lle.biblio.batch.traitement.TestLogin" />
-    <bean id="TestLivre" class="org.lle.biblio.batch.traitement.TestLivre" />
+
+    <bean id="CheckLocation" class="org.lle.biblio.batch.traitement.CheckLocation" />
+
+
+
+
 </beans>

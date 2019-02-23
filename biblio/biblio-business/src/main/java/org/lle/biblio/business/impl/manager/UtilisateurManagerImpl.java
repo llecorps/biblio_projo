@@ -31,4 +31,16 @@ public class UtilisateurManagerImpl extends AbstractManager implements Utilisate
         }
         return vUtilisateur;
     }
+
+    @Override
+    public Utilisateur getUtilisateur(int id) {
+
+        try {
+            vUtilisateur = getDaoFactory().getUtilisateurDao().getUtilisateur(id);
+        } catch (NotFoundException e) {
+            e.printStackTrace();
+        }
+        return vUtilisateur;
+
+    }
 }
