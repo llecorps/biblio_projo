@@ -14,5 +14,6 @@ public interface LocationManager {
     int getExemplaire (int id);
     void addEmprunt(Location pLocation );
     List<Location> getListLocation(int id);
+    List<Location> listLocation();
     void addProlo(String expiration, int id);
 }

@@ -3,7 +3,7 @@ package org.lle.biblio.batch;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.lle.biblio.batch.traitement.TestLivre;
+import org.lle.biblio.batch.traitement.CheckLocation;
 import org.lle.biblio.model.exception.TechnicalException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -36,10 +36,10 @@ public class Main {
             }
 
             String vTraitementId = pArgs[0];
-            if ("TestLivre".equals(vTraitementId)) {
-                LOGGER.info("Execution du traitement : TestLogin");
+            if ("CheckLocation".equals(vTraitementId)) {
+                LOGGER.info("Execution du traitement : CheckLocation");
                 //ExportTicketStatus vTraitement = vApplicationContext.getBean("exportTicketStatus", ExportTicketStatus.class);
-                TestLivre vTraitement  = vApplicationContext.getBean("TestLivre", TestLivre.class);
+                CheckLocation vTraitement  = vApplicationContext.getBean("CheckLocation", CheckLocation.class);
                 vTraitement.run();
             } else {
                 throw new TechnicalException("Traitement inconnu : " + vTraitementId);

@@ -20,5 +20,7 @@ public interface LocationDao {
 
     List<Location> getListLocation(int id);
 
+    List<Location> listLocation();
+
     void addProlo(String expiration, int id);
 }

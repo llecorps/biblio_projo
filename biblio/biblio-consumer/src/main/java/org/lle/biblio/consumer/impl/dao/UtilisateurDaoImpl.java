@@ -21,7 +21,7 @@ public class UtilisateurDaoImpl extends AbstractDaoImpl implements UtilisateurDa
 
     @Override
     public Utilisateur getUtilisateur(Integer pId) throws NotFoundException {
-        String vSQL = "SELECT * FROM utilisateur WHERE id = :id";
+        String vSQL = "SELECT * FROM utilisateur WHERE id = "+pId;
         NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
         MapSqlParameterSource vParams = new MapSqlParameterSource("id", pId);
         try {

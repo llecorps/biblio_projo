@@ -12,5 +12,6 @@ public interface UtilisateurManager {
 
     List<Utilisateur> getListUtilisateur();
 
-    Utilisateur getUtilisateur(String Login, String Password) ;
+    Utilisateur getUtilisateur(String Login, String Password);
+    Utilisateur getUtilisateur(int id);
 }

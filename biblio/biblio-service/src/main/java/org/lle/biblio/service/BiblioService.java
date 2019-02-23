@@ -76,6 +76,19 @@ public class BiblioService {
     }
 
     @WebMethod
+    public  List<Location> listLocation( ){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
+
+        List<Location> vListLocation = vLocationService.listLocation();
+
+       return vListLocation;
+    }
+
+    @WebMethod
     public void addProlo( String expiration,int id){
 
         ApplicationContext vApplicationContext
@@ -141,6 +154,21 @@ public class BiblioService {
         return vAuteur;
 
     }
+
+    @WebMethod
+    public Utilisateur getUtilisateur(int id){
+
+        ApplicationContext vApplicationContext
+                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+        UtilisateurServiceImpl vUtilisateurService = vApplicationContext.getBean("UtilisateurServiceImpl", UtilisateurServiceImpl.class);
+
+        Utilisateur vUtilisateur = vUtilisateurService.getUtilisateur(id);
+
+        return vUtilisateur;
+
+    }
+
     @WebMethod
     public List<Livre> DoListLivre() throws NotFoundException {
 

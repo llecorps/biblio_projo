@@ -25,5 +25,6 @@
     <bean id="LocationServiceImpl" class="org.lle.biblio.service.LocationServiceImpl" />
     <bean id="LivreServiceImpl" class="org.lle.biblio.service.LivreServiceImpl" />
     <bean id="AuteurServiceImpl" class="org.lle.biblio.service.AuteurServiceImpl" />
+    <bean id="UtilisateurServiceImpl" class="org.lle.biblio.service.UtilisateurServiceImpl" />
 
 </beans>
