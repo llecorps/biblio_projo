@@ -29,6 +29,15 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     private Location location;
     private Livre livre;
     private Auteur auteur;
+    private String prolongation;
+
+    public String getProlongation() {
+        return prolongation;
+    }
+
+    public void setProlongation(String prolongation) {
+        this.prolongation = prolongation;
+    }
 
     public Auteur getAuteur() {
         return auteur;
@@ -160,6 +169,12 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
                         vEmprunt.setGenre(livre.getGenre());
                         vEmprunt.setExpiredate(loc.getExpiredate());
                         vEmprunt.setNom(auteur.getNom());
+
+                        if (loc.isProlongation() == true){
+                            vEmprunt.setProlongation("true");
+                        }else{
+                            vEmprunt.setProlongation("false");
+                        }
 
                         listEmprunt.add(vEmprunt);
 

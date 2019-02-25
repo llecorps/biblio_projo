@@ -89,7 +89,7 @@ public class LivreAction extends ActionSupport implements SessionAware {
 
     public String doRent() {
 
-       // String vResult = ActionSupport.INPUT;
+       String vResult = ActionSupport.INPUT;
 
         BiblioService_Service pBiblio = new BiblioService_Service();
 
@@ -104,7 +104,9 @@ public class LivreAction extends ActionSupport implements SessionAware {
             int vExmplaire = pBiblioService.getExemplaire(livre.getId());
             if (vExmplaire == livre.getExemplaire()){
 
-                System.out.println("ouvrage non disponible!");
+
+                this.addActionError("ouvrage non disponible !");
+                vResult = ActionSupport.ERROR;
 
             }else {
 
@@ -124,11 +126,15 @@ public class LivreAction extends ActionSupport implements SessionAware {
 
                 pBiblioService.addLocation(pLocation);
 
+                vResult = ActionSupport.SUCCESS;
+
             }
         }
 
 
-        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+        //return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+
+        return vResult;
     }
 
 
