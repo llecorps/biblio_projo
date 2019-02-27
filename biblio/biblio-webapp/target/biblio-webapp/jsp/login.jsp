@@ -12,7 +12,7 @@
     <%@ include file="./_include/header.jsp" %>
 
 
-<div class="container" >
+
 <div class="container" >
 
     <h2><s:text name="title.login" /></h2>
