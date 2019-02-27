@@ -59,7 +59,7 @@
 
         <!-- Action "index" -->
         <action name="index">
-            <result>/jsp/index.jsp</result>
+            <result>/jsp/login.jsp</result>
         </action>
 
         <!-- Actions Login/Logout -->

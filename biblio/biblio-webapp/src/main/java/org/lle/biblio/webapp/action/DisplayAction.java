@@ -22,6 +22,15 @@ public class DisplayAction extends ActionSupport implements SessionAware {
     private List<Location> listLocation;
     private List<Emprunt> listEmprunt;
     private Utilisateur utilisateur;
+    private String prolongation;
+
+    public String getProlongation() {
+        return prolongation;
+    }
+
+    public void setProlongation(String prolongation) {
+        this.prolongation = prolongation;
+    }
 
     public Utilisateur getUtilisateur() {
         return utilisateur;
@@ -114,7 +123,14 @@ public class DisplayAction extends ActionSupport implements SessionAware {
                 vEmprunt.setExpiredate(loc.getExpiredate());
                 vEmprunt.setNom(auteur.getNom());
 
+                if (loc.isProlongation() == true){
+                    vEmprunt.setProlongation("true");
+                }else{
+                    vEmprunt.setProlongation("false");
+                }
+
                 listEmprunt.add(vEmprunt);
+
             }
             vResult = ActionSupport.SUCCESS;
 

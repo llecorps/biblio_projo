@@ -10,7 +10,16 @@ public class Emprunt {
     private String genre;
     private String expiredate;
     private String nom;
+    private String prolongation;
 
+
+    public String getProlongation() {
+        return prolongation;
+    }
+
+    public void setProlongation(String prolongation) {
+        this.prolongation = prolongation;
+    }
 
     public String getTitre() {
         return titre;
@@ -63,6 +72,7 @@ public class Emprunt {
                 ", genre='" + genre + '\'' +
                 ", expiredate='" + expiredate + '\'' +
                 ", nom='" + nom + '\'' +
+                ", prolongation='" + prolongation + '\'' +
                 '}';
     }
 }
