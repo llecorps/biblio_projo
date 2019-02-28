@@ -1,7 +1,0 @@
-org\lle\biblio\service\UtilisateurServiceImpl.class
-org\lle\biblio\service\AuteurServiceImpl.class
-org\lle\biblio\service\LocationServiceImpl.class
-org\lle\biblio\service\BiblioService.class
-org\lle\biblio\service\LivreServiceImpl.class
-org\lle\biblio\service\LoginServiceImpl.class
-org\lle\biblio\service\AbstractService.class
