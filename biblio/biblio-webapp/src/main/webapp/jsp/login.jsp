@@ -37,7 +37,7 @@
 
             <s:if test="prolongation=='true'">
                 <s:a action="prolonger" class="btn btn-outline-success">Prolonger
-                    <s:param name="id" value="livre.id" />
+                    <s:param name="id" value="id" />
                 </s:a>
             </s:if>
             <s:else>

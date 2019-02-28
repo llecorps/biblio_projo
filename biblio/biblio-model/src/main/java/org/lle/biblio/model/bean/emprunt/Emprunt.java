@@ -11,7 +11,15 @@ public class Emprunt {
     private String expiredate;
     private String nom;
     private String prolongation;
+    private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getProlongation() {
         return prolongation;
@@ -73,6 +81,7 @@ public class Emprunt {
                 ", expiredate='" + expiredate + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prolongation='" + prolongation + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

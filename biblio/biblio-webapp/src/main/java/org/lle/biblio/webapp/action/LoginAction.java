@@ -169,6 +169,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
                         vEmprunt.setGenre(livre.getGenre());
                         vEmprunt.setExpiredate(loc.getExpiredate());
                         vEmprunt.setNom(auteur.getNom());
+                        vEmprunt.setId(livre.getId());
 
                         if (loc.isProlongation() == true){
                             vEmprunt.setProlongation("true");
