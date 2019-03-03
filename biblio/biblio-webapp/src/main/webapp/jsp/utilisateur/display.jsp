@@ -20,13 +20,18 @@
 
         <s:if test="#session.utilisateur">
 
-            <li>Login : <s:property value="utilisateur.login" /></li>
-            <li>Email : <s:property value="utilisateur.email" /></li>
-            <li>Adress : <s:property value="utilisateur.adress" /></li>
-            <li>Phone : <s:property value="utilisateur.phone" /></li>
 
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Login : <s:property value="utilisateur.login" /></li>
+                    <li class="list-group-item">Email : <s:property value="utilisateur.email" /></li>
+                    <li class="list-group-item">Adress : <s:property value="utilisateur.adress" /></li>
+                    <li class="list-group-item">Phone : <s:property value="utilisateur.phone" /></li>
+                </ul>
+            </div>
 
             <ul class="list-group list-group-flush">
+
                 <s:iterator value="listEmprunt">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         Nom:&nbsp<s:property value="nom"/>

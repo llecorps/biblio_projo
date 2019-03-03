@@ -2,41 +2,11 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 
-<div class="container text-center">
-  <hr />
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">About us</a></li>
 
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <s:a action="index">
-                            <s:param name="request_locale">en</s:param>
-                            [English]
-                        </s:a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <s:a action="index">
-                            <s:param name="request_locale">fr</s:param>
-                            [Français]
-                        </s:a>
-                    </li>
-
-                </ul>
-            </div>
-
-        </div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Biblio</h1>
+        <p class="lead">Un service d'emprunt pour tous ouvrages.</p>
     </div>
-    <hr>
-
 </div>
+

@@ -17,7 +17,7 @@
 
 
 
-    <s:form action="recherche">
+    <s:form action="recherche" class="form-inline">
 
 
         <s:select label="Recherche par genre"
@@ -26,7 +26,7 @@
                   name="livre.genre" />
 
 
-        <s:submit value="OK"/>
+        <s:submit value="OK" class="btn btn-primary mb-2"/>
 
     </s:form>
 
