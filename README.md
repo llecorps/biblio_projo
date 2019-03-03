@@ -20,3 +20,20 @@ un batch lancé régulièrement et qui enverra des mails de relance aux usagers 
 
 -   `biblio` : les sources du projet de bibliothèque
 
+### Installation
+
+- `Unzip`le package biblio-delivery.zip.
+- Déployer biblio-service.war sur le serveur Glassfih via l'interface Administrateur.
+- Déployer biblio-webapp.war sur le serveur Tomcat.
+- Sur linux :
+  -> déployer biblio-batch-1.0-SNAPSHOT-archive-deploy.tar.gz.
+  -> Livrer les fichiers de configuration : config.properties, db-biblio.properties.
+  -> Lancer le script batch-export-emprunt-statut.sh
+  
+### Crontab
+
+- crontab -e pour éditer la crontab.
+- exemple pour un batch journalier lancé à 02:00 AM:
+# Minute   Hour   Day of Month       Month          Day of Week        Command    
+# (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)                
+    0        2          *             *                *            batch-export-emprunt-statut.sh
