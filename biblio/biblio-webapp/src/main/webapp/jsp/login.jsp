@@ -15,18 +15,25 @@
 
 <div class="container" >
 
-    <h2><s:text name="title.login" /></h2>
+    <div class="row">
+
+    <h2><s:text name="title.login" /></h2><br>
 
 
-    <s:if test="#session.utilisateur">
+    <s:if test="#session.utilisateur">&nbsp
 
-        <li>Login : <s:property value="utilisateur.login" /></li>
-        <li>Email : <s:property value="utilisateur.email" /></li>
-        <li>Adress : <s:property value="utilisateur.adress" /></li>
-        <li>Phone : <s:property value="utilisateur.phone" /></li>
-
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Login : <s:property value="utilisateur.login" /></li>
+                    <li class="list-group-item">Email : <s:property value="utilisateur.email" /></li>
+                    <li class="list-group-item">Adress : <s:property value="utilisateur.adress" /></li>
+                    <li class="list-group-item">Phone : <s:property value="utilisateur.phone" /></li>
+                </ul>
+            </div>
 
         <ul class="list-group list-group-flush">
+            <br>
+            <h2><s:text name="nav.list" /></h2>&nbsp
         <s:iterator value="listEmprunt">
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <s:property value="nom"/>
@@ -41,13 +48,15 @@
                 </s:a>
             </s:if>
             <s:else>
-                <span class="badge-danger">Pas de prolongation possible</span>
+                <span class="badge-danger">Pas de prolongation</span>
             </s:else>
         </li>
         </s:iterator>
         </ul>
 
+</div>
 
+    <%@ include file="./_include/footer.jsp" %>
     </s:if>
 
     <s:else>
@@ -78,10 +87,11 @@
             </div>
         </div>
     </div>
+
     </s:else>
 </div>
 
     <%@ include file="./_include/scripts.jsp" %>
-    <%@ include file="./_include/footer.jsp" %>
+
 </body>
 </html>

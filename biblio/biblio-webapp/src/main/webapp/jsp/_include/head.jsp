@@ -13,7 +13,7 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="<c:url value="/jsp/assets/css/bootstrap.css" />" rel="stylesheet">
 <link href="<c:url value="/jsp/assets/css/login.css" />" rel="stylesheet">
-<link href="<c:url value="/jsp/assets/css/footer.css" />" rel="stylesheet">
+
 <script src="<c:url value="/jsp/assets/js/jquery.js" />"></script>
 <script src="<c:url value="/jsp/assets/js/bootstrap.min.js" />"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
