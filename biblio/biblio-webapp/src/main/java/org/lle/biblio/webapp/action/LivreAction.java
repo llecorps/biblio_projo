@@ -131,9 +131,6 @@ public class LivreAction extends ActionSupport implements SessionAware {
             }
         }
 
-
-        //return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
-
         return vResult;
     }
 
@@ -149,8 +146,6 @@ public class LivreAction extends ActionSupport implements SessionAware {
             System.out.println("Id du livre est:" +id);
 
             location = pBiblioService.getLivrelocation(id);
-
-            Boolean bool = location.isProlongation();
 
             if (location.isProlongation() == true){
 
@@ -172,6 +167,5 @@ public class LivreAction extends ActionSupport implements SessionAware {
         return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
 
     }
-
 
 }

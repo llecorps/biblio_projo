@@ -16,18 +16,27 @@ import java.util.List;
 /**
  * Created by TheAdmin on 24.01.2019.
  */
+
 @WebService(serviceName = "BiblioService")
-public class BiblioService {
+public class BiblioService extends AbstractService{
 
+    private ApplicationContext vApplicationContext;
 
+    public BiblioService() {
+
+        vApplicationContext = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+
+    }
 
     @WebMethod
     public Utilisateur DoLogin(String login, String password){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
+        //ApplicationContext vApplicationContext
+          //     = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LoginServiceImpl vLoginService = vApplicationContext.getBean("LoginServiceImpl", LoginServiceImpl.class);
+
+
 
        Utilisateur vUtilisateur = vLoginService.doLogin(login, password);
 
@@ -37,8 +46,6 @@ public class BiblioService {
     @WebMethod
     public Location getLocation(int id){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -51,8 +58,6 @@ public class BiblioService {
     @WebMethod
     public Location getLivrelocation(int id){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -65,8 +70,6 @@ public class BiblioService {
     @WebMethod
     public List<Location> getListLocation( int id){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -78,8 +81,6 @@ public class BiblioService {
     @WebMethod
     public  List<Location> listLocation( ){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -91,8 +92,6 @@ public class BiblioService {
     @WebMethod
     public void addProlo( String expiration,int id){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -104,8 +103,6 @@ public class BiblioService {
     @WebMethod
     public void addLocation(Location pLocation){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -115,9 +112,6 @@ public class BiblioService {
 
     @WebMethod
     public int getExemplaire(int id){
-
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LocationServiceImpl vLocationService = vApplicationContext.getBean("LocationServiceImpl", LocationServiceImpl.class);
 
@@ -130,8 +124,6 @@ public class BiblioService {
     @WebMethod
     public Livre getLivre(int id){
 
-    ApplicationContext vApplicationContext
-            = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
     LivreServiceImpl vLivreService = vApplicationContext.getBean("LivreServiceImpl", LivreServiceImpl.class);
 
@@ -144,8 +136,6 @@ public class BiblioService {
     @WebMethod
     public Auteur getAuteur(int id){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         AuteurServiceImpl vAuteurService = vApplicationContext.getBean("AuteurServiceImpl", AuteurServiceImpl.class);
 
@@ -158,8 +148,6 @@ public class BiblioService {
     @WebMethod
     public Utilisateur getUtilisateur(int id){
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         UtilisateurServiceImpl vUtilisateurService = vApplicationContext.getBean("UtilisateurServiceImpl", UtilisateurServiceImpl.class);
 
@@ -172,9 +160,6 @@ public class BiblioService {
     @WebMethod
     public List<Livre> DoListLivre() throws NotFoundException {
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
-
         LivreServiceImpl vLivreService = vApplicationContext.getBean("LivreServiceImpl", LivreServiceImpl.class);
 
         List<Livre> vListLivre =  new ArrayList<>();
@@ -186,8 +171,6 @@ public class BiblioService {
     @WebMethod
     public List<Livre> DoResultLivre(String chaine) throws NotFoundException {
 
-        ApplicationContext vApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         LivreServiceImpl vLivreService = vApplicationContext.getBean("LivreServiceImpl", LivreServiceImpl.class);
 

@@ -38,7 +38,7 @@ public class Main {
             String vTraitementId = pArgs[0];
             if ("CheckLocation".equals(vTraitementId)) {
                 LOGGER.info("Execution du traitement : CheckLocation");
-                //ExportTicketStatus vTraitement = vApplicationContext.getBean("exportTicketStatus", ExportTicketStatus.class);
+
                 CheckLocation vTraitement  = vApplicationContext.getBean("CheckLocation", CheckLocation.class);
                 vTraitement.run();
             } else {
