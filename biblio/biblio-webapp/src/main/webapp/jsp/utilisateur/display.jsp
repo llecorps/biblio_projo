@@ -32,10 +32,13 @@
 
             <ul class="list-group list-group-flush">
 
+                <br>
+                <h2><s:text name="nav.list" /></h2>&nbsp
                 <s:iterator value="listEmprunt">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
+
                         Nom:&nbsp<s:property value="nom"/>
-                        Titre&nbsp<s:property value="titre"/>
+                        Titre:&nbsp<s:property value="titre"/>
                         Description:&nbsp<s:property value="description"/>
                         Genre:&nbsp<s:property value="genre"/>
                         Date d'expiration:&nbsp<s:property value="expiredate"/>

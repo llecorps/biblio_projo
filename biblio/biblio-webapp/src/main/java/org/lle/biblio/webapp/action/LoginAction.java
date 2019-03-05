@@ -30,6 +30,10 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
     private Livre livre;
     private Auteur auteur;
     private String prolongation;
+    private String login;
+    private String password;
+    private List<Location> listLocation;
+    private List<Emprunt> listEmprunt;
 
     public String getProlongation() {
         return prolongation;
@@ -91,14 +95,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
         this.servletRequest = pRequest;
     }
 
-    // ==================== Attributs ====================
-    // ----- Paramètres en entrée
-    private String login;
-    private String password;
-    private List<Location> listLocation;
-    private List<Emprunt> listEmprunt;
-
-    // ==================== Getters/Setters ====================
     public String getLogin() {
         return login;
     }
@@ -136,10 +132,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
         public String doLogin() {
             String vResult = ActionSupport.INPUT;
 
-            // appel webservice Login
-
             if (!StringUtils.isAllEmpty(login, password)) {
-
 
                 BiblioService_Service pBiblio = new BiblioService_Service();
 
@@ -147,9 +140,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
                 utilisateur = pBiblioService.doLogin(login, password);
 
-
-
-               // if (utilisateur.getLogin().equals(login) &&  utilisateur.getPassword().equals(password)) {
                 if (utilisateur != null) {
                         // Ajout de l'utilisateur en session
                         this.session.put("utilisateur", utilisateur);
@@ -192,10 +182,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
             return vResult;
 
         }
-
-
-
-
         /**
          * Action de déconnexion d'un utilisateur
          * @return success

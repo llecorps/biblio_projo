@@ -27,8 +27,6 @@ public class Utilisateur {
         this.phone = phone;
     }
 
-    public Utilisateur(String pPseudo) {
-    }
 
     public Utilisateur() {
     }

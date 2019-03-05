@@ -54,8 +54,6 @@ public class RechercheAction extends ActionSupport {
 
         if (this.livre != null) {
 
-            //System.out.println("le genre est:"+livre.getGenre());
-
             this.ResultLivre = pBiblioService.doResultLivre(livre.getGenre());
 
             vResult = ActionSupport.SUCCESS;

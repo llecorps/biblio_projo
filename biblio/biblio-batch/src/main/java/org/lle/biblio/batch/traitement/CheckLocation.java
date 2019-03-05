@@ -62,9 +62,7 @@ public class CheckLocation extends AbstractTraitement{
 
                 String mail = vUtilisateur.getEmail();
 
-
                 //Envoi Mail
-
 
                 String to = mail;
                 String subject = "Relance Emprunt";

@@ -11,17 +11,9 @@ import java.util.List;
  */
 public class LivreServiceImpl extends AbstractService {
 
-    /*
-    private int id;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-*/
+
     public Livre getLivre(int id){
 
         Livre vLivre = getManagerFactory().getLivreManager().getLivre(id);
@@ -32,9 +24,9 @@ public class LivreServiceImpl extends AbstractService {
 
     public List<Livre> getListLivre() throws NotFoundException {
 
-        List<Livre> vListLivre = new ArrayList();
+       List<Livre> vListLivre = new ArrayList();
 
-        vListLivre = getManagerFactory().getLivreManager().getListLivre();
+       vListLivre = getManagerFactory().getLivreManager().getListLivre();
 
         return vListLivre;
     }
